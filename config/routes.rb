@@ -1,11 +1,14 @@
 Rails.application.routes.draw do
-  get 'navigation/work'
 
-  get 'navigation/about'
+root 'navigation#home'
 
-  get 'navigation/contact'
+  match '/work', to: 'navigation#work', via: 'get'
 
-  root to: 'navigation#about'
+  match '/about', to: 'navigation#about', via: 'get'
+
+  match '/contact', to: 'navigation#contact', via: 'get'
+
+  match '/home', to: 'navigation#home', via: 'get'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
