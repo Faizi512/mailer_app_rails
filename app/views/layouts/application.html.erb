@@ -1,12 +1,14 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>TRC | Communication Design</title>
+  <title>NTP | Nadir Toosy Photography </title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 
 <!--[if lt IE 9]>
 <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
@@ -22,59 +24,19 @@
     <%= link_to "ntp", home_path , id: "logo", :alt => "NTP Logo" ,size: "100x100"  %>
     <nav>
       <ul class="nav navbar-nav navbar-right" id="36">
-              <li><%= link_to "Home",    home_path %></li>
-              <li><%= link_to "About",    about_path %></li>
-              <li><%= link_to "Work",    work_path %></li>
-              <li><%= link_to "Contact", contact_path %></li>
-            </ul>
- <!--                  <div id="filters" class="button-group">
-  <button type="button" class="btn btn-link" data-filter="*">All</button>
-  <button type="button" class="btn btn-link"data-filter=".type1">Fashion</button>
-  <button type="button" class="btn btn-link"data-filter=".type2">Architectural</button>
-  <button type="button" class="btn btn-link" data-filter=".type3">Portrait</button>
-  <button type="button" class="btn btn-link" data-filter=".type4">Photojournalism</button>
-  <button type="button" class="btn btn-link" data-filter=".type5">Industrial</button>
-</div> -->
-          </nav>
-        </div>
-      </div>
-    </header>
+        <li><%= link_to "Home",    home_path %></li>
+        <li><%= link_to "About",    about_path %></li>
+        <li><%= link_to "Work",    work_path %></li>
+        <li><%= link_to "Contact", contact_path %></li>
+      </ul>
+    </nav>
+  </div>
+</div>
+</header>
 
-      <%= yield %>
-    </div>
-
-<!-- <script>
-
-    var $container = $('#container');
-    // init
-    $container.isotope({
-      // options
-      itemSelector: '.border',
-      layoutMode: 'masonry'
-    });
-
-    $container.imagesLoaded( function() {
-  $container.isotope('layout');
-});
-
-    // filter items on button click
-    $('#filters').on( 'click', 'button', function() {
-      var filterValue = $(this).attr('data-filter');
-      $container.isotope({ filter: filterValue });
-    });
-
-</script>
-
-<script> 
-
-$(document).ready(function() {
-  $('.image-link').magnificPopup({type:'image'});
-});
-
-</script> -->
-
-
-
+</div>
+  <%= yield %>
+</div>
 
 </body>
 </html>

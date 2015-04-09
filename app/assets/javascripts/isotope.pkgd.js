@@ -1,13 +1,4 @@
-/*!
- * Isotope PACKAGED v2.0.1
- * Filter & sort magical layouts
- * http://isotope.metafizzy.co
- */
 
-/**
- * Bridget makes jQuery widgets
- * v1.0.1
- */
 
 ( function( window ) {
 
