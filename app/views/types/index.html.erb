@@ -1,0 +1,16 @@
+
+<div class="container-fluid" id="container">
+
+<h3> All Types </h3>
+
+<ul class="clients">
+	<% @types.each do |type| %>
+		<li>
+			<%= link_to type.name, type %> 
+			| <%= link_to "delete", type, method: :delete,
+                                  data: { confirm: "Are you sure?" } %>
+		</li>
+		<% end %>
+	</ul>
+
+</div>
