@@ -6,8 +6,7 @@ gem 'rails', '4.1.2'
 gem 'bootstrap-sass', '3.3.4.1'
 gem 'sprockets', '2.11.0'
 
-gem 'magnific-popup-rails', '~> 0.9.9.1'
-
+gem 'devise'
 
 group :development do
 	gem 'sqlite3'

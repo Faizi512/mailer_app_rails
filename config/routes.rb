@@ -1,14 +1,19 @@
 Rails.application.routes.draw do
 
+  devise_for :clients
 root 'navigation#home'
 
-  match '/work', to: 'navigation#work', via: 'get'
+  get '/work' => 'navigation#work'
 
-  match '/about', to: 'navigation#about', via: 'get'
+  get '/about' => 'navigation#about'
 
-  match '/contact', to: 'navigation#contact', via: 'get'
+  get 'contact' => 'navigation#contact'
 
-  match '/home', to: 'navigation#home', via: 'get'
+  get '/home' => 'navigation#home'
+
+ resources :types
+
+
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
