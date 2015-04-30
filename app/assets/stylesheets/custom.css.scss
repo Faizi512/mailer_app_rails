@@ -189,9 +189,9 @@ position: absolute;
 
 position: relative;
 background-color: #ffffff;
-opacity: 0.9;
+opacity: 0.89;
 height: 600px;
-top: 300px;
+top: 100px;
 
   }
 
@@ -201,13 +201,30 @@ top: 300px;
 
 position: relative;
 background-color: #ffffff;
-opacity: 0.98;
+opacity: 0.97;
 height: 600px;
 top: 100px;
 
   }
 
+/* Text for home page */
 
+.desc {
+
+text-align: center;
+font-family: 'Exo 2';
+padding-top: 70px;
+padding-bottom: 70px;
+
+}
+
+
+.divider {
+
+height: 1px;
+background-color: #477bba;
+
+}
 
 
 /* Type */

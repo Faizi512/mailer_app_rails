@@ -7,7 +7,9 @@ root 'navigation#home'
 
   get '/about' => 'navigation#about'
 
-  get 'contact' => 'navigation#contact'
+  get '/contact' => 'navigation#contact'
+
+  get '/clientele' => 'navigation#clientele'
 
   get '/home' => 'navigation#home'
 

@@ -15,5 +15,9 @@ class NavigationController < ApplicationController
   def contact
   end
 
+  def clientele
+  
+  end
+
 
 end
