@@ -1,8 +1,35 @@
 
 
-<div class="container-fluid" id="container">
+<div class="container-fluid" id="contactcontainer">
+
+	<%= image_tag("3.jpg") %>
+
+</div>
+
+<div class="container" id="contactrelativecontainer">
+<div class="map">
 
 <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7242.3947368657!2d67.058184!3d24.822923149999998!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3eb33c4faae48deb%3A0xbc80e82cc4bfee8e!2sD.H.A.+Phase+4%2C+Karachi%2C+Pakistan!5e0!3m2!1sen!2s!4v1429568025196" width="600" height="450" frameborder="0" style="border:0"></iframe>
 
 </div>
+
+<div class="contactinfo">
+
+<p class="attn"> Get in touch </p>
+
+<ul class="listnolist">
+	<li> Phone: 0345-306-7433</li>
+	<li> Studio: E/24, 4th Gizri Street, Phase IV, DHA - Karachi, Pakistan </li>
+	<li> Email: <%= mail_to "info@nadirtoosy.com", "Info@nadirtoosy.com", subject: "Inquiry"%> </li>
+	<li> Facebook: <%= link_to "NTP on Facebook", "https://www.facebook.com/nadirtoosy", :target => "_blank"  %> </li>
+	<li> Twitter: </li>
+</ul>
+
+</div>
+
+</div>
+				
+</div>
+
+
 

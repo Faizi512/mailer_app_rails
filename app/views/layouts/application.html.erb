@@ -21,9 +21,9 @@
 
 <header class="navbar navbar-fixed-top ">
  <div class="container-fluid">
-    <%= link_to "ntp", home_path , id: "logo", :alt => "NTP Logo" ,size: "100x100"  %>
+    <%= link_to(image_tag("Logo.png", id: "logo", :alt => "NTP Logo" ,width: "200"), home_path) %>
     <nav>
-      <ul class="nav navbar-nav navbar-right" id="36">
+      <ul class="nav navbar-nav navbar-left" id="36">
         <li><%= link_to "Home",    home_path %></li>
         <li><%= link_to "About",    about_path %></li>
         <li><%= link_to "Work",    work_path %></li>
