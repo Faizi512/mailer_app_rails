@@ -1,29 +1,30 @@
 
 
-<div class="container-fluid" id="contactcontainer">
+<div class="container-fluid" id="formcontainer">
 
-	<%= image_tag("NTP-6.jpg") %>
-
-</div>
-
-<div class="container" id="abouttextcontainer">
+<%= link_to "Launch", "http://distilleryimage6.ak.instagram.com/ba70b8e8030011e3a31b22000a1fbb63_7.jpg",  id: "mylink" %>
 
 
 
-<div class="leading2">
-
-<p class="attn"> About </p><br>
-
-<p> Founded in 2014, NTP is a Karachi-based, full-service photography studio covering the spectrum of static content creation.</p>
-
-<p> While most companies and studios focus on volume and hours, our focus is much more qualitative. Without sound, relevant concepts, a photograph doesn't maximize it's potential. Similarly, without an efficient service delivery platform, the process of creating excellent content is left wanting, as too much time is spent corresponding with all stakeholders and coordinating with all participants. 
-
-</div>
 
 
-</div>
+
+
+
+
 				
 </div>
 
 
 
+<script>
+
+
+$('#mylink').ekkoLightbox(options);
+
+$(document).delegate('*[data-toggle="lightbox"]', 'click', function(event) {
+    event.preventDefault();
+    $(this).ekkoLightbox();
+}); 
+
+</script>

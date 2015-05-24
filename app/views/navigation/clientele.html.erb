@@ -1,11 +1,121 @@
 
 
 
-<div class="container-fluid" id="containeri">
+<div class="container" id="containerb">
 
 <p> Clientele </p>
 
+ <div class="item row">
+ 	<%= image_tag("GE.jpg", width: "150") %>
+ </div>
+
+  <div class="item row">
+ 	<%= image_tag("Getz.png", width: "150") %>
+ </div>
+
+  <div class="item row">
+ 	<%= image_tag("M.jpg", width: "150") %>
+ </div>
+
+  <div class="item row">
+ 	<%= image_tag("OKP.jpg", width: "150") %>
+ </div>
+
+  <div class="item row">
+ 	<%= image_tag("SB.jpg", width: "150") %>
+ </div>
+
+  <div class="item row">
+ 	<%= image_tag("SCB.jpg", width: "150") %>
+ </div>
+
+ <div class="item row">
+ 	<%= image_tag("BAF.jpg", width: "150") %>
+ </div>
+
+  <div class="item row">
+ 	<%= image_tag("Byco.jpg", width: "150") %>
+ </div>
+
+  <div class="item row">
+ 	<%= image_tag("Citibank.jpg", width: "150") %>
+ </div>
+
+  <div class="item row">
+ 	<%= image_tag("CS.png", width: "150") %>
+ </div>
+
+  <div class="item row">
+ 	<%= image_tag("Dawn.jpg", width: "150") %>
+ </div>
+
+  <div class="item row">
+ 	<%= image_tag("DND.jpg", width: "150") %>
+ </div>
+
+   <div class="item row">
+ 	<%= image_tag("Engro.png", width: "150") %>
+ </div>
+
+  <div class="item row">
+ 	<%= image_tag("Fm89.jpg", width: "150") %>
+ </div>
+
+  <div class="item row">
+ 	<%= image_tag("gulabo.jpg", width: "150") %>
+ </div>
+
+  <div class="item row">
+ 	<%= image_tag("inaaya.png", width: "150") %>
+ </div>
+
+   <div class="item row">
+ 	<%= image_tag("NidaAzwer.jpg", width: "150") %>
+ </div>
+
+  <div class="item row">
+ 	<%= image_tag("NL.png", width: "150") %>
+ </div>
+
+  <div class="item row">
+ 	<%= image_tag("mushtaq.jpg", width: "150") %>
+ </div>
+
+  <div class="item row">
+ 	<%= image_tag("Lotte.jpg", width: "150") %>
+ </div>
+
+  <div class="item row">
+ 	<%= image_tag("Oaks.png", width: "150") %>
+ </div>
+
+  <div class="item row">
+ 	<%= image_tag("TD.png", width: "150") %>
+ </div>
+
+  <div class="item row">
+ 	<%= image_tag("NL.jpg", width: "150") %>
+ </div>
+
+
+
+
 
 </div>
+
+<script>
+// initialize Isotope
+var $container = $('#containerb').isotope({
+  itemSelector: '.item',
+   masonry: {
+    columnWidth: 50
+  }
+});
+// layout Isotope again after all images have loaded
+$container.imagesLoaded( function() {
+  $container.isotope('layout');
+});
+
+</script>
 
 
