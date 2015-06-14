@@ -2,14 +2,15 @@
 <div class="container" id="containerb">
 
 <p id="notice"><%= notice %></p>
-
+<div> <%= image_tag @model.avatar.url(:square) %> </div>
+<br>
 <p>
-  <strong>Firstname:</strong>
+  <strong>First Name:</strong>
   <%= @model.firstname %>
 </p>
 
 <p>
-  <strong>Lastname:</strong>
+  <strong>Last Name:</strong>
   <%= @model.lastname %>
 </p>
 
@@ -24,12 +25,12 @@
 </p>
 
 <p>
-  <strong>Shoesize:</strong>
+  <strong>Shoe size:</strong>
   <%= @model.shoesize %>
 </p>
 
 <p>
-  <strong>Haircolor:</strong>
+  <strong>Hair color:</strong>
   <%= @model.haircolor %>
 </p>
 
@@ -54,7 +55,7 @@
 </p>
 
 <p>
-  <strong>Phonenumber:</strong>
+  <strong>Phone number:</strong>
   <%= @model.phonenumber %>
 </p>
 
