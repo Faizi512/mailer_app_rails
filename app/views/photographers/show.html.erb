@@ -1,0 +1,24 @@
+
+<div class="container" id="containerb">
+
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @photographer.name %>
+</p>
+
+<p>
+  <strong>Email:</strong>
+  <%= @photographer.email %>
+</p>
+
+<p>
+  <strong>Phonenumber:</strong>
+  <%= @photographer.phonenumber %>
+</p>
+
+<%= link_to 'Edit', edit_photographer_path(@photographer) %> |
+<%= link_to 'Back', photographers_path %>
+
+</div>

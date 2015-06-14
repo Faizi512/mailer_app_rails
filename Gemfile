@@ -8,6 +8,10 @@ gem 'sprockets', '2.11.0'
 
 gem 'devise'
 
+gem 'aws-sdk', '< 2.0'
+gem 'paperclip'
+
+
 group :development do
 	gem 'sqlite3'
 	gem 'annotate'

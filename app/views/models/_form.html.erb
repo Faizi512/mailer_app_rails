@@ -1,0 +1,71 @@
+<%= form_for(@model, multipart: true) do |f| %>
+  <% if @model.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@model.errors.count, "error") %> prohibited this model from being saved:</h2>
+
+      <ul>
+      <% @model.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="container" id="containerb">
+
+  <div class="field">
+    <%= f.label :firstname %><br>
+    <%= f.text_field :firstname %>
+  </div>
+  <div class="field">
+    <%= f.label :lastname %><br>
+    <%= f.text_field :lastname %>
+  </div>
+  <div class="field">
+    <%= f.label :height %><br>
+    <%= f.number_field :height %>
+  </div>
+  <div class="field">
+    <%= f.label :size %><br>
+    <%= f.number_field :size %>
+  </div>
+  <div class="field">
+    <%= f.label :shoesize %><br>
+    <%= f.number_field :shoesize %>
+  </div>
+  <div class="field">
+    <%= f.label :haircolor %><br>
+    <%= f.text_field :haircolor %>
+  </div>
+  <div class="field">
+    <%= f.label :eyes %><br>
+    <%= f.text_field :eyes %>
+  </div>
+  <div class="field">
+    <%= f.label :bust %><br>
+    <%= f.number_field :bust %>
+  </div>
+  <div class="field">
+    <%= f.label :waist %><br>
+    <%= f.number_field :waist %>
+  </div>
+  <div class="field">
+    <%= f.label :hips %><br>
+    <%= f.number_field :hips %>
+  </div>
+  <div class="field">
+    <%= f.label :phonenumber %><br>
+    <%= f.number_field :phonenumber %>
+  </div>
+    <div class="field">
+    <%= f.label :avatar %>
+    <%= f.file_field :avatar %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+
+<% end %>
+
+</div>
+

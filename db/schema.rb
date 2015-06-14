@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150410233204) do
+ActiveRecord::Schema.define(version: 20150613233355) do
 
   create_table "clients", force: true do |t|
     t.string   "email",                  default: "", null: false
@@ -30,6 +30,34 @@ ActiveRecord::Schema.define(version: 20150410233204) do
 
   add_index "clients", ["email"], name: "index_clients_on_email", unique: true
   add_index "clients", ["reset_password_token"], name: "index_clients_on_reset_password_token", unique: true
+
+  create_table "models", force: true do |t|
+    t.string   "firstname"
+    t.string   "lastname"
+    t.integer  "height"
+    t.integer  "size"
+    t.integer  "shoesize"
+    t.string   "haircolor"
+    t.string   "eyes"
+    t.integer  "bust"
+    t.integer  "waist"
+    t.integer  "hips"
+    t.integer  "phonenumber"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "avatar_file_name"
+    t.string   "avatar_content_type"
+    t.integer  "avatar_file_size"
+    t.datetime "avatar_updated_at"
+  end
+
+  create_table "photographers", force: true do |t|
+    t.string   "name"
+    t.string   "email"
+    t.integer  "phonenumber"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "types", force: true do |t|
     t.string   "name"

@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
 
+  resources :models
+
+  resources :photographers
+
   devise_for :clients
 root 'navigation#home'
 

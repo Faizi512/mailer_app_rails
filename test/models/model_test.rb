@@ -1,0 +1,27 @@
+# == Schema Information
+#
+# Table name: models
+#
+#  id          :integer          not null, primary key
+#  firstname   :string(255)
+#  lastname    :string(255)
+#  height      :integer
+#  size        :integer
+#  shoesize    :integer
+#  haircolor   :string(255)
+#  eyes        :string(255)
+#  bust        :integer
+#  waist       :integer
+#  hips        :integer
+#  phonenumber :integer
+#  created_at  :datetime
+#  updated_at  :datetime
+#
+
+require 'test_helper'
+
+class ModelTest < ActiveSupport::TestCase
+  # test "the truth" do
+  #   assert true
+  # end
+end
