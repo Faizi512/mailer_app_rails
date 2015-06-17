@@ -18,6 +18,8 @@ root 'navigation#home'
 
   get '/home' => 'navigation#home'
 
+  get '/console' => 'navigation#console'
+
  resources :types
 
 

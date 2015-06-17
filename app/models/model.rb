@@ -29,6 +29,11 @@ class Model < ActiveRecord::Base
     	{ :bucket => "ntpkhi", :access_key_id => "AKIAIQ6BFBC4L7GDHHCQ", :secret_access_key => "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" }
     end
  
+  validates :firstname, presence: true
+  validates :lastname, presence: true
+  validates :phonenumber, length: { minimum: 10 }, uniqueness: true
+
+
 
   # Validate the attached image is image/jpg, image/png, etc
   validates_attachment_content_type :avatar, :content_type => /\Aimage\/.*\Z/

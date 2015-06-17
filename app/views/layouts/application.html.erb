@@ -33,6 +33,14 @@
     </nav>
   </div>
 </div>
+<div>
+     <% if admin_signed_in? %>
+        <li><%= "Signed in as"%> <%= current_admin.email %> </li>
+        <li><%= link_to "Logout", destroy_admin_session_path, method: :delete %></li>
+        <% else %>
+        <li><%= link_to "Admin login", new_admin_session_path %></li>
+          <% end %>
+        </div>
 </header>
 
 </div>

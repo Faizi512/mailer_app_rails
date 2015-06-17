@@ -19,5 +19,8 @@ class NavigationController < ApplicationController
   
   end
 
+  def console
+  end
+
 
 end
