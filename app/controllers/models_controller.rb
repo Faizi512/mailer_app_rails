@@ -1,6 +1,6 @@
 class ModelsController < ApplicationController
   before_action :set_model, only: [:show, :edit, :update, :destroy]
-  before_action :authenticate_admin!
+  before_action :authenticate_admin!, only: [:new, :edit, :create, :update, :destroy]
   respond_to :html
 
   def index

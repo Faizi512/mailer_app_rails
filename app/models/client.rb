@@ -15,6 +15,10 @@
 #  last_sign_in_ip        :string(255)
 #  created_at             :datetime
 #  updated_at             :datetime
+#  name                   :string(255)
+#  nameofcontact          :string(255)
+#  phonenumber            :integer
+#  mailingaddress         :string(255)
 #
 
 class Client < ActiveRecord::Base
@@ -22,4 +26,19 @@ class Client < ActiveRecord::Base
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
+
+ has_attached_file :logo, styles: {
+    thumb: '150x150>',
+    square: '200x200#',
+}, :storage => :s3,
+    :s3_credentials => Proc.new{|b| b.instance.s3_credentials }
+
+    def s3_credentials 
+    	{ :bucket => "ntpkhi", :access_key_id => "AKIAIQ6BFBC4L7GDHHCQ", :secret_access_key => "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" }
+    end
+
+
+  # Validate the attached image is image/jpg, image/png, etc
+  validates_attachment_content_type :logo, :content_type => /\Aimage\/.*\Z/
+
 end

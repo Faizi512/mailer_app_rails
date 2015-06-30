@@ -1,11 +1,20 @@
 Rails.application.routes.draw do
 
+
+ 
+
+  devise_for :clients, :controllers => { registrations: 'registrations' }
+
+   resources :clients, only: [:show, :index]
+
   devise_for :admins
+
   resources :models
 
   resources :photographers
 
-  devise_for :clients
+  
+
 root 'navigation#home'
 
   get '/work' => 'navigation#work'

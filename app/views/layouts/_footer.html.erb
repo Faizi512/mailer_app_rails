@@ -4,7 +4,11 @@
 	<div class="col-md-4">
 		<p class="footerheader"> Extranet </p>
 		<ul>
-			<li><%= link_to "Client Login", new_client_session_path %></li>
+             <% if client_signed_in? %>
+      		  <li><%= "Signed in as"%> <%= current_client.email %> | <%= link_to "Logout", destroy_client_session_path, method: :delete %></li>
+       			 <% else %>
+        		<li><%= link_to "Client login", new_client_session_path %></li>
+        	 <% end %>
 			<li><%= link_to "Agency Login", '#' %></li>
 			<li><%= link_to "Models", '#' %></li>
 			<li><%= link_to "Artists & Talent", '#' %></li>
@@ -38,6 +42,6 @@
 		
 	</div>
 	<div class="col-md-6 right">
-		 	<span class="pull-right"> <small> <%= link_to "Legal Disclaimer." %> </small> | <small> <%= link_to "Privacy Policy." %> </small> </span>
+		 	<span class="pull-right"> <small>  alpha - V.0.0.3 </small> | <small> <%= link_to "16 Circles", "http://www.16circles.com", :target => "_blank" %> </small> </span>
 		</div>
 </div>

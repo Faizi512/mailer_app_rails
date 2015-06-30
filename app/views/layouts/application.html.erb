@@ -25,6 +25,13 @@
     <%= link_to "Nadir Toosy Photography", home_path, id: "logo"   %>
     <nav>
       <ul class="nav navbar-nav navbar-right" id="36">
+
+         <% if admin_signed_in? %>
+        <li><%= link_to "Client Index",    clients_path %></li>
+        <li><%= link_to "Admin Console",    console_path %></li>
+        <% elsif client_signed_in? %>
+        <li><%= link_to "My Profile",    current_client %></li>
+        <% end %>
         <li><%= link_to "Home",    home_path %></li>
         <li><%= link_to "Clientele",    clientele_path %></li>
         <li><%= link_to "Work",    work_path %></li>
@@ -33,15 +40,18 @@
     </nav>
   </div>
 </div>
+<!--  <% flash.each do |key, value|%>
+    <div class="alert alert-<%= key %>"><%= value %></div>
+    <% end %> -->
 <div>
      <% if admin_signed_in? %>
         <li><%= "Signed in as"%> <%= current_admin.email %> </li>
         <li><%= link_to "Logout", destroy_admin_session_path, method: :delete %></li>
         <% else %>
-        <li><%= link_to "Admin login", new_admin_session_path %></li>
+        <!-- <li><%= link_to "Admin login", new_admin_session_path %></li> -->
           <% end %>
         </div>
-</header>
+    </header>
 
 </div>
   <%= yield %>
@@ -50,6 +60,7 @@
 </div>
       <%= render '/layouts/footer' %>
 </div>
+
        <p class="notice"><%= notice %></p>
        <p class="alert"><%= alert %></p>
 

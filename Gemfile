@@ -11,6 +11,9 @@ gem 'devise'
 gem 'aws-sdk', '< 2.0'
 gem 'paperclip'
 
+gem 'will_paginate'
+gem 'bootstrap-will_paginate'
+
 
 group :development do
 	gem 'sqlite3'
