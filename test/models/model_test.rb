@@ -13,7 +13,7 @@
 #  bust                :integer
 #  waist               :integer
 #  hips                :integer
-#  phonenumber         :integer
+#  phonenumber         :string(255)
 #  created_at          :datetime
 #  updated_at          :datetime
 #  avatar_file_name    :string(255)

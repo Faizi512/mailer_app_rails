@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150620014301) do
+ActiveRecord::Schema.define(version: 20150630141357) do
 
   create_table "admins", force: true do |t|
     t.string   "email",                  default: "", null: false
@@ -46,7 +46,7 @@ ActiveRecord::Schema.define(version: 20150620014301) do
     t.datetime "updated_at"
     t.string   "name"
     t.string   "nameofcontact"
-    t.integer  "phonenumber"
+    t.string   "phonenumber"
     t.string   "mailingaddress"
     t.string   "logo_file_name"
     t.string   "logo_content_type"
@@ -68,7 +68,7 @@ ActiveRecord::Schema.define(version: 20150620014301) do
     t.integer  "bust"
     t.integer  "waist"
     t.integer  "hips"
-    t.integer  "phonenumber"
+    t.string   "phonenumber"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "avatar_file_name"
@@ -80,7 +80,7 @@ ActiveRecord::Schema.define(version: 20150620014301) do
   create_table "photographers", force: true do |t|
     t.string   "name"
     t.string   "email"
-    t.integer  "phonenumber"
+    t.string   "phonenumber"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

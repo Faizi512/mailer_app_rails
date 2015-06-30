@@ -17,8 +17,12 @@
 #  updated_at             :datetime
 #  name                   :string(255)
 #  nameofcontact          :string(255)
-#  phonenumber            :integer
+#  phonenumber            :string(255)
 #  mailingaddress         :string(255)
+#  logo_file_name         :string(255)
+#  logo_content_type      :string(255)
+#  logo_file_size         :integer
+#  logo_updated_at        :datetime
 #
 
 class Client < ActiveRecord::Base
