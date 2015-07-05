@@ -21,6 +21,11 @@ class NavigationController < ApplicationController
   end
 
   def console
+
+    @photographers = Photographer.all
+    @models = Model.all
+    @clients = Client.all
+    
   end
 
 

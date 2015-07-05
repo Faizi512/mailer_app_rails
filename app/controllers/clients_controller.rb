@@ -1,11 +1,15 @@
 class ClientsController < ApplicationController
 
-before_filter :authenticate_person!
-before_filter ->{ authenticate_person! :admin }, only: [:new, :create, :edit, :update, :destroy]
+
+
+
+# before_filter :authenticate_person!
+# before_filter ->{ authenticate_person! :admin }, only: [:new, :create, :edit, :update, :destroy]
 
 # before_action :authenticate_client!, only: [:new, :edit, :create, :update, :show, :destroy]
-# before_action :authenticate_admin!, only: [:index]
+before_action :authenticate_admin!, only: [:index]
 before_action :check_client, only: [:show]
+
 
   def index
   	@clients = Client.paginate(page: params[:page], :per_page => 7)

@@ -7,21 +7,21 @@
 
 <div><%= "Model Management" %></div>
 <ul>
-<li><%=link_to "View all models", models_path %></li>
+<li><%=link_to "View all models", models_path %> (<%= @models.count %>) </li>
 <li><%=link_to "Add new model", new_model_path%></li>
 </ul>
 <hr>
 <br>
 <div><%= "Photographer Management" %></div>
 <ul>
-<li><%=link_to "View all photographers", photographers_path %></li>
+<li><%=link_to "View all photographers", photographers_path %> (<%= @photographers.count %>) </li>
 <li><%=link_to "Add new photographer", new_photographer_path%></li>
 </ul>
 <hr>
 <br>
 <div><%= "Client Management" %></div>
 <ul>
-<li><%= link_to "View all clients",    clients_path %></li>
+<li><%= link_to "View all clients",    clients_path %> (<%= @clients.count %>) </li>
 <li><%=link_to "Add new client", new_client_registration_path%></li>
 </ul>
 <hr>

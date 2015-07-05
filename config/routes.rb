@@ -3,11 +3,12 @@ Rails.application.routes.draw do
 
  
 
-  devise_for :clients, :controllers => { registrations: 'registrations' }
+  devise_for :clients, :controllers => { registrations: 'registrations' }                                    
+
 
    resources :clients, only: [:show, :index]
 
-  devise_for :admins
+  devise_for :admins, :skip => [:registrations]
 
   resources :models
 
