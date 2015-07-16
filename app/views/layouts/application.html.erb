@@ -42,9 +42,6 @@
     </nav>
   </div>
 </div>
-<!--  <% flash.each do |key, value|%>
-    <div class="alert alert-<%= key %>"><%= value %></div>
-    <% end %> -->
 <div>
      <% if admin_signed_in? %>
         <li><%= "Signed in as"%> <%= current_admin.email %> </li>
@@ -56,11 +53,15 @@
     </header>
 
 </div>
+ <% flash.each do |message_type, message| %>
+        <%= content_tag(:div, message, class: "alert alert-#{message_type}") %>
+      <% end %>
   <%= yield %>
 <div class="container" id="bottomspacer">
   <hr class="footdivider">
 </div>
       <%= render '/layouts/footer' %>
+      <%= debug(params) if Rails.env.development? %>
 </div>
 
        <p class="notice"><%= notice %></p>

@@ -5,9 +5,9 @@
 		<p class="footerheader"> Extranet </p>
 		<ul>
              <% if client_signed_in? %>
-      		  <li><%= "Signed in as"%> <%= current_client.email %> | <%= link_to "Logout", destroy_client_session_path, method: :delete %></li>
+      		  <li><%= "Signed in as"%> <%= current_client.email %> | <%= link_to "Logout", logout_path, method: :delete %></li>
        			 <% else %>
-        		<li><%= link_to "Client login", new_client_session_path %></li>
+        		<li><%= link_to "Client login", login_path %></li>
         	 <% end %>
 			<li><%= link_to "Agency Login", '#' %></li>
 			<li><%= link_to "Models", '#' %></li>

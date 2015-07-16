@@ -1,20 +1,6 @@
 Rails.application.routes.draw do
 
 
- 
-
-  devise_for :clients, :controllers => { registrations: 'registrations' }                                    
-
-
-   resources :clients, only: [:show, :index]
-
-  devise_for :admins, :skip => [:registrations]
-
-  resources :models
-
-  resources :photographers
-
-  
 
 root 'navigation#home'
 
@@ -28,9 +14,22 @@ root 'navigation#home'
 
   get '/home' => 'navigation#home'
 
-  get '/console' => 'navigation#console'
+  get '/console' => 'navigation#console'                              
 
- resources :types
+
+  get 'login' => 'sessions#new'
+  post 'login' => 'sessions#create'
+  delete 'logout' => 'sessions#destroy'
+
+  resources :clients
+
+  devise_for :admins, :skip => [:registrations]
+
+  resources :models
+
+  resources :photographers
+
+  resources :types
 
 
 
