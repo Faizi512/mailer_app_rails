@@ -2,18 +2,34 @@
 #
 # Table name: clients
 #
-#  id              :integer          not null, primary key
-#  email           :string(255)
-#  name            :string(255)
-#  nameofcontact   :string(255)
-#  phonenumber     :string(255)
-#  mailingaddress  :string(255)
-#  created_at      :datetime
-#  updated_at      :datetime
-#  password_digest :string(255)
+#  id                :integer          not null, primary key
+#  email             :string(255)
+#  name              :string(255)
+#  nameofcontact     :string(255)
+#  phonenumber       :string(255)
+#  mailingaddress    :string(255)
+#  created_at        :datetime
+#  updated_at        :datetime
+#  password_digest   :string(255)
+#  logo_file_name    :string(255)
+#  logo_content_type :string(255)
+#  logo_file_size    :integer
+#  logo_updated_at   :datetime
 #
 
 class Client < ActiveRecord::Base
+
+has_attached_file :logo, styles: {
+thumb: '150x150>',
+square: '200x200#',
+}, :storage => :s3,
+    :s3_credentials => Proc.new{|b| b.instance.s3_credentials }
+
+    def s3_credentials 
+    { :bucket => "ntpkhi", :access_key_id => "AKIAIQ6BFBC4L7GDHHCQ", :secret_access_key => "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" }
+    end
+
+
 	
 	before_save { self.email = email.downcase }
 	validates :name, presence: true, length: { maximum: 50 }
@@ -24,5 +40,6 @@ class Client < ActiveRecord::Base
      has_secure_password
      validates :password, presence: true, length: { minimum: 6 }
 
+  validates_attachment_content_type :logo, :content_type => /\Aimage\/.*\Z/
 
 end

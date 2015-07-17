@@ -1,3 +1,4 @@
+
 <div class="container" id="containerb">
 
 <h3>Client Index (<%= @clients.count %>)</h3> <br>
@@ -7,11 +8,11 @@
 <table class="table">
 
     <tbody> 
-    	  <% @clients.each do |client| %>
-    	<tr>
-    		<td><%= link_to client.name, client_path(client) %></td>
+     <% @clients.each do |client| %>
+    <tr>
+    <td><%= link_to client.name, client_path(client) %></td>
 
-    	</tr>
+    </tr>
     </tbody>
   
   <% end %>

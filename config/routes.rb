@@ -23,8 +23,8 @@ root 'navigation#home'
 
   resources :clients
 
-  devise_for :admins, :skip => [:registrations]
-
+  devise_for :admins
+  
   resources :models
 
   resources :photographers

@@ -17,6 +17,8 @@ class NavigationController < ApplicationController
   end
 
   def clientele
+
+    @clients = Client.all
   
   end
 

@@ -1,7 +1,7 @@
 
 <div class="container" id="containerb">
 
-<% provide(:title, 'Sign up') %>
+<% provide(:title, 'Edit Client Details') %>
 
 <h3>Sign up</h3>
 
@@ -31,12 +31,12 @@
       <%= f.label :password_confirmation, "Confirmation" %>
       <%= f.password_field :password_confirmation %>
 
-       <div class="field">
+      <div class="field">
         <%= f.label :logo %>
         <%= f.file_field :logo %>
       </div>
 
-      <%= f.submit "Create new client", class: "btn btn-primary" %>
+      <%= f.submit "Save changes", class: "btn btn-primary" %>
     <% end %>
   </div>
 </div>
