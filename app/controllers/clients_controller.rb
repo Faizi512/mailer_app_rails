@@ -52,8 +52,7 @@ private
     end
 
       def client_params
-      params.require(:client).permit(:name, :email, :nameofcontact, :phonenumber, :mailingaddress, :password,
-                                   :password_confirmation, :logo)
+      params.require(:client).permit(:name, :email, :nameofcontact, :phonenumber, :mailingaddress, :password, :password_confirmation, :logo)
     end
 
     def logged_in_client
