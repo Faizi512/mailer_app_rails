@@ -11,7 +11,10 @@
      <% @clients.each do |client| %>
     <tr>
     <td><%= link_to client.name, client_path(client) %></td>
-
+<td>  <% if admin_signed_in? && !client_signed_in? %>
+    | <%= link_to "delete", client, method: :delete,
+                                  data: { confirm: "Are you sure? This action cannot be undone." } %>
+  <% end %>
     </tr>
     </tbody>
   

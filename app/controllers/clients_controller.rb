@@ -44,6 +44,13 @@ before_action :logged_in_client, only: [:edit, :update]
     end
   end
 
+    def destroy
+    Client.find(params[:id]).destroy
+    flash[:success] = "Client deleted"
+    redirect_to clients_url
+  end
+
+
 private
 
  def check_client

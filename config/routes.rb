@@ -23,7 +23,7 @@ root 'navigation#home'
 
   resources :clients
 
-  devise_for :admins
+  devise_for :admins, skip: :registrations
   
   resources :models
 

@@ -57,10 +57,16 @@
     <%= f.label :hips %><br>
     <%= f.number_field :hips %>
   </div>
+
+  <% if admin_signed_in? %>
+
   <div class="field">
     <%= f.label :phonenumber, "Phone Number" %><br>
     <%= f.number_field :phonenumber %>
   </div>
+
+  <% end %>
+  
    <div class="field">
     <%= f.label :city, "City" %><br>
     <%= f.select :city, ["Karachi", "Lahore", "Islamabad", "Faisalabad", "Rawalpindi"] %>
