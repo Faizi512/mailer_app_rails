@@ -9,7 +9,13 @@ class ModelsController < ApplicationController
   end
 
   def show
-    respond_with(@model)
+    @model = Model.find(params[:id])
+    respond_to do |format|
+      format.html
+      format.pdf do
+      render pdf: "NTP-#{@model.firstname}-cutsheet"
+      end
+    end
   end
 
   def new
@@ -42,6 +48,6 @@ class ModelsController < ApplicationController
     end
 
     def model_params
-      params.require(:model).permit(:firstname, :lastname, :height, :size, :shoesize, :haircolor, :eyes, :bust, :waist, :hips, :phonenumber, :avatar)
+      params.require(:model).permit(:firstname, :lastname, :heightfeet, :heightinches, :size, :shoesize, :haircolor, :eyes, :bust, :waist, :hips, :phonenumber, :city, :age, :avatar)
     end
 end

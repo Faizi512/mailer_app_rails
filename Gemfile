@@ -14,6 +14,8 @@ gem 'paperclip'
 gem 'will_paginate'
 gem 'bootstrap-will_paginate'
 
+gem 'wicked_pdf'
+
 
 group :development do
 	gem 'sqlite3'

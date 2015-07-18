@@ -15,8 +15,18 @@
 </p>
 
 <p>
+  <strong>Age:</strong>
+  <%= @model.age %>
+</p>
+<p>
+  <strong>Location:</strong>
+  <%= @model.city %>
+</p>
+
+<p>
   <strong>Height:</strong>
-  <%= @model.height %>
+  <%= @model.heightfeet %> Feet 
+  <%= @model.heightinches %> Inches
 </p>
 
 <p>
@@ -59,7 +69,12 @@
   <%= @model.phonenumber %>
 </p>
 
-<%= link_to 'Edit', edit_model_path(@model) %> |
-<%= link_to 'Back', models_path %>
+<div>
+<%= link_to 'Edit', edit_model_path(@model), class: "btn btn-sm
+ btn-warning" %>
+<%= link_to 'Back', models_path, class: "btn btn-sm
+ btn-info" %> </div><br>
+<div><%= link_to 'Download PDF', model_path(@model, :format => "pdf"), :target => '_blank', class: "btn btn-xs
+ btn-info" %><small> PDF file opens in a new window</small></div>
 
 </div>

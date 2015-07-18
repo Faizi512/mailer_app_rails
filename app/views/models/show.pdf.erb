@@ -1,0 +1,45 @@
+
+<h2>NTP - Nadir Toosy Photography</h2><br>
+
+
+<h4> Model Cutsheet for <%= @model.firstname %> <%= @model.lastname %> </h4><br>
+
+<div> <%= image_tag @model.avatar.url(:square) %> </div>
+<br>
+<p>
+ <strong>First Name:</strong>
+  <%= @model.firstname %>
+</p>
+
+<p>
+  <strong>Last Name:</strong>
+  <%= @model.lastname %>
+</p>
+
+<p>
+  <strong>Height:</strong>
+  <%= @model.heightfeet %> Feet 
+  <%= @model.heightinches %> Inches
+</p>
+
+<p>
+  <strong>Size:</strong>
+  <%= @model.size %>
+</p>
+
+<p>
+  <strong>Shoe size:</strong>
+  <%= @model.shoesize %>
+</p>
+
+<p>
+  <strong>Hair color:</strong>
+  <%= @model.haircolor %>
+</p>
+
+<p>
+  <strong>Eyes:</strong>
+  <%= @model.eyes %>
+</p>
+
+<p> For rates, measurements, availability and bookings, please contact your project manager at NTP, or send us an email at info@nadirtoosy.com</p>

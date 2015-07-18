@@ -5,14 +5,14 @@
 #  id                  :integer          not null, primary key
 #  firstname           :string(255)
 #  lastname            :string(255)
-#  height              :integer
-#  size                :integer
-#  shoesize            :integer
+#  heightfeet          :integer
+#  size                :string(255)
+#  shoesize            :float
 #  haircolor           :string(255)
 #  eyes                :string(255)
-#  bust                :integer
-#  waist               :integer
-#  hips                :integer
+#  bust                :float
+#  waist               :float
+#  hips                :float
 #  phonenumber         :string(255)
 #  created_at          :datetime
 #  updated_at          :datetime
@@ -20,6 +20,9 @@
 #  avatar_content_type :string(255)
 #  avatar_file_size    :integer
 #  avatar_updated_at   :datetime
+#  heightinches        :decimal(, )
+#  city                :string(255)
+#  age                 :integer
 #
 
 class Model < ActiveRecord::Base

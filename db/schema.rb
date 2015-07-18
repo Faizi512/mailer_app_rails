@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150717034157) do
+ActiveRecord::Schema.define(version: 20150717162344) do
 
   create_table "admins", force: true do |t|
     t.string   "email",                  default: "", null: false
@@ -51,14 +51,14 @@ ActiveRecord::Schema.define(version: 20150717034157) do
   create_table "models", force: true do |t|
     t.string   "firstname"
     t.string   "lastname"
-    t.integer  "height"
-    t.integer  "size"
-    t.integer  "shoesize"
+    t.integer  "heightfeet"
+    t.string   "size"
+    t.float    "shoesize"
     t.string   "haircolor"
     t.string   "eyes"
-    t.integer  "bust"
-    t.integer  "waist"
-    t.integer  "hips"
+    t.float    "bust"
+    t.float    "waist"
+    t.float    "hips"
     t.string   "phonenumber"
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -66,6 +66,9 @@ ActiveRecord::Schema.define(version: 20150717034157) do
     t.string   "avatar_content_type"
     t.integer  "avatar_file_size"
     t.datetime "avatar_updated_at"
+    t.decimal  "heightinches"
+    t.string   "city"
+    t.integer  "age"
   end
 
   create_table "photographers", force: true do |t|

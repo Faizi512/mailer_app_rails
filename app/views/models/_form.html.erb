@@ -14,48 +14,56 @@
   <div class="container" id="containerb">
 
   <div class="field">
-    <%= f.label :firstname %><br>
+    <%= f.label :firstname, "First Name" %><br>
     <%= f.text_field :firstname %>
   </div>
   <div class="field">
-    <%= f.label :lastname %><br>
+    <%= f.label :lastname, "Last Name" %><br>
     <%= f.text_field :lastname %>
   </div>
   <div class="field">
-    <%= f.label :height %><br>
-    <%= f.number_field :height %>
+    <%= f.label :heightfeet, "Height:" %> <%= f.select :heightfeet, (0..7).to_a, :label => "Feet" %>
+    <%= f.label :heightinches, "Inches" %> <%= f.number_field :heightinches, :step => '0.25' %><br>
   </div>
   <div class="field">
     <%= f.label :size %><br>
-    <%= f.number_field :size %>
+    <%= f.text_field :size %>
+  </div>
+   <div class="field">
+    <%= f.label :age, "Age" %><br>
+    <%= f.select :age, (1..90).to_a %>  
   </div>
   <div class="field">
-    <%= f.label :shoesize %><br>
-    <%= f.number_field :shoesize %>
+    <%= f.label :shoesize, "Shoe Size" %><br>
+    <%= f.select :shoesize, ((3..12).step(0.5)).to_a %>
   </div>
   <div class="field">
-    <%= f.label :haircolor %><br>
-    <%= f.text_field :haircolor %>
+    <%= f.label :haircolor, "Hair Color" %><br>
+    <%= f.select :haircolor, ["Black", "Brown", "White", "Grey", "Blonde", "Red"] %>
   </div>
   <div class="field">
     <%= f.label :eyes %><br>
-    <%= f.text_field :eyes %>
+    <%= f.select :eyes, ["Black", "Brown", "Green", "Grey", "Blue"] %>
   </div>
   <div class="field">
     <%= f.label :bust %><br>
-    <%= f.number_field :bust %>
+    <%= f.number_field :bust, :step => '0.25'  %>
   </div>
   <div class="field">
     <%= f.label :waist %><br>
-    <%= f.number_field :waist %>
+    <%= f.number_field :waist, :step => '0.25'  %>
   </div>
   <div class="field">
     <%= f.label :hips %><br>
     <%= f.number_field :hips %>
   </div>
   <div class="field">
-    <%= f.label :phonenumber %><br>
+    <%= f.label :phonenumber, "Phone Number" %><br>
     <%= f.number_field :phonenumber %>
+  </div>
+   <div class="field">
+    <%= f.label :city, "City" %><br>
+    <%= f.select :city, ["Karachi", "Lahore", "Islamabad", "Faisalabad", "Rawalpindi"] %>
   </div>
     <div class="field">
     <%= f.label :avatar %>
