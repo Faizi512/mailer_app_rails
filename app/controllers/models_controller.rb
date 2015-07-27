@@ -1,6 +1,7 @@
 class ModelsController < ApplicationController
   before_action :set_model, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_admin!, only: [:new, :edit, :create, :update, :destroy]
+  before_action :authorized_access, only: [:show]
   respond_to :html
 
   def index
@@ -50,4 +51,11 @@ class ModelsController < ApplicationController
     def model_params
       params.require(:model).permit(:firstname, :lastname, :heightfeet, :heightinches, :size, :shoesize, :haircolor, :eyes, :bust, :waist, :hips, :phonenumber, :city, :age, :avatar)
     end
+
+        def authorized_access
+      unless client_signed_in? or admin_signed_in?
+        flash[:danger] = "Please log in"
+        redirect_to login_url
+    end
+  end
 end

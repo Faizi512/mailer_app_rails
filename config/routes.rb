@@ -29,6 +29,8 @@ root 'navigation#home'
 
   resources :photographers
 
+  resources :projects, only: [:create, :destroy, :details]
+
   resources :types
 
 

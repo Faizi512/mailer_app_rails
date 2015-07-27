@@ -27,6 +27,7 @@ before_action :logged_in_client, only: [:edit, :update]
 
   def show
      @client = Client.find(params[:id])
+     @projects = @client.projects.paginate(page: params[:page])
   end
 
   def edit

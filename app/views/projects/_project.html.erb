@@ -1,0 +1,8 @@
+<li id="project-<%= project.id %>">
+
+  <span class="client"><%= link_to project.client.name, project.client %> </span>
+  <span class="description"><%= project.description %></span>
+  <span class="timestamp">
+    Created <%= time_ago_in_words(project.created_at) %> ago.
+  </span>
+</li>
