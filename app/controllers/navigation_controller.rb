@@ -27,6 +27,7 @@ class NavigationController < ApplicationController
     @photographers = Photographer.all
     @models = Model.all
     @clients = Client.all
+    @types = Type.all
     
   end
 

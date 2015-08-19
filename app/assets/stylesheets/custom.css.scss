@@ -344,6 +344,41 @@ bottom: 20px;
 }
 
 
+
+
+/* Iphone Screen Size to 767 pixels */  
+
+@media (max-width: 767px) {
+
+
+
+
+
+}
+
+
+
+
+
+
+
+/* Iphone portrait mode */
+
+@media (max-width : 480px) {
+
+
+  }
+
+
+
+/* Ipad or Larger Screen Size */
+
+@media (min-width: 768px) {
+
+
+  }
+
+
 /* mixins, variables, etc. */
 
 $gray-medium-light: #eaeaea;

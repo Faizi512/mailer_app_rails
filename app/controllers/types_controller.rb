@@ -20,6 +20,16 @@ class TypesController < ApplicationController
   	@type = Type.find(params[:id])
   end
 
+  def edit
+    @type = Type.find(params[:id])
+  end
+
+  def update
+    @type = Type.find(params[:id])
+    @type.update(type_params)
+    redirect_to @type
+  end
+
   def destroy
     Type.find(params[:id]).destroy
     redirect_to :back

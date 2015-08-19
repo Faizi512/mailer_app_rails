@@ -21,7 +21,10 @@ root 'navigation#home'
   post 'login' => 'sessions#create'
   delete 'logout' => 'sessions#destroy'
 
-  resources :clients
+  resources :clients do
+      resources :projects, only: [:new, :create, :destroy, :details]
+    end
+
 
   devise_for :admins, skip: :registrations
   
@@ -29,7 +32,7 @@ root 'navigation#home'
 
   resources :photographers
 
-  resources :projects, only: [:create, :destroy, :details]
+
 
   resources :types
 

@@ -1,17 +1,27 @@
 
-<div class="container-fluid" id="container">
+<div class="container" id="containerb">
 
-<h3> All Types </h3>
+<h3> All Photography Categories </h3>
 
 <ul class="clients">
 	<% @types.each do |type| %>
 		<li>
 			<%= link_to type.name, type %> 
-			| <%= link_to "delete", type, method: :delete,
-                                  data: { confirm: "Are you sure?" } %>
+			| <%= link_to "Edit", edit_type_path(type) %> | <%= link_to "Delete", type, method: :delete,
+                                  data: { confirm: "Are you sure?" } %> 
 		</li>
 		<% end %>
 	</ul>
+
+	<br>
+
+<div>
+	<%= link_to "Add new category", new_type_path %>
+</div>
+
+
+</div>
+
 
 </div>
 

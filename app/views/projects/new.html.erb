@@ -1,0 +1,32 @@
+<div class="container" id="containerb">
+
+<br>
+
+<h4> Creating a new project for <%= @client.name %> </h4>
+
+<div>
+<%= form_for ([@client, @project]) do |f| %>
+<%= render 'shared/error_messages' %>
+
+<div> <%= f.label :date %>
+ <%= f.date_field :date, :value => Time.zone.now.to_date, :readonly => true  %>
+</div>
+<br>
+
+<div> <%= f.label :type %>
+      <%= f.collection_select(:type, Type.all, :id, :name) %>
+  </div>
+
+<div>
+
+<br>
+
+
+<div>
+     <%= f.submit "Create new project", class: "btn btn-primary" %>
+ </div>
+
+    <% end %>
+  </div>
+
+</div>
