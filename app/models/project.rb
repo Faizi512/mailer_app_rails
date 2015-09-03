@@ -7,7 +7,7 @@
 #  headline      :string(255)
 #  location      :string(255)
 #  description   :text
-#  type          :string(255)
+#  ctype         :string(255)
 #  status        :string(255)
 #  paymentstatus :string(255)
 #  client_id     :integer
@@ -17,6 +17,10 @@
 
 class Project < ActiveRecord::Base
   belongs_to :client
+  has_many :locations
+ 
+
+
   default_scope -> { order(created_at: :desc) }
   validates :client_id, presence: true
  

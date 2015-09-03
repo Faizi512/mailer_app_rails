@@ -1,0 +1,47 @@
+
+
+<div class="container" id="containerb">
+
+<p class="attn"> Show Client Project Details </p>
+
+<hr>
+<br>
+
+<div> Client Name: <%= @client.name %> </div>
+
+<br>
+
+<div> Project Created on: <%= @project.date %> </div>
+
+<br>
+
+<div> Client Representative: <%= @client.nameofcontact %> </div>
+
+<br>
+
+<div> Client ID: <%= @client.id %> </div>
+
+<br>
+
+<div> Project ID: <%= @project.id %> </div>
+
+<br>
+
+<div> Project Type: <%= @project.ctype %> </div>
+
+<br>
+
+<div> Project Location: <%= @project.location %> </div>
+
+<br>
+
+<div> Project Status: <%= @project.status %> </div>
+
+<br>
+
+<div> Payment Status: <%= @project.paymentstatus %> </div>
+
+<br>
+
+<%= link_to "Back to Client Profile page", client_path(@client) %> |  <%= link_to 'Delete', "#", method: :delete, data: { confirm: 'Are you sure?' } %></td>
+</div>

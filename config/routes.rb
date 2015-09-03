@@ -2,6 +2,14 @@ Rails.application.routes.draw do
 
 
 
+  resources :pstats
+
+  resources :ctypes
+
+  resources :statuses
+
+  resources :locations
+
 root 'navigation#home'
 
   get '/work' => 'navigation#work'
@@ -22,7 +30,7 @@ root 'navigation#home'
   delete 'logout' => 'sessions#destroy'
 
   resources :clients do
-      resources :projects, only: [:new, :create, :destroy, :details]
+      resources :projects
     end
 
 
@@ -33,8 +41,6 @@ root 'navigation#home'
   resources :photographers
 
 
-
-  resources :types
 
 
 

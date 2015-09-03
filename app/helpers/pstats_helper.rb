@@ -1,0 +1,2 @@
+module PstatsHelper
+end

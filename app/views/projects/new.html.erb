@@ -9,18 +9,30 @@
 <%= render 'shared/error_messages' %>
 
 <div> <%= f.label :date %>
- <%= f.date_field :date, :value => Time.zone.now.to_date, :readonly => true  %>
+ <%= f.date_field :date, :value => Time.zone.now.to_date.strftime("%B %d, %Y"), :readonly => true  %>
 </div>
 <br>
 
-<div> <%= f.label :type %>
-      <%= f.collection_select(:type, Type.all, :id, :name) %>
+<div> <%= f.label :ctype, "Category" %>
+      <%= f.collection_select(:ctype, Ctype.all, :name, :name) %>
   </div>
-
-<div>
-
 <br>
-
+<div> <%= f.label :location %>
+      <%= f.collection_select(:location, Location.all, :name, :name) %>
+  </div>
+<div>
+<br>
+<div> <%= f.label :description %>
+	  <%= f.text_area :description, size: "60x7", class: 'formalign' %>
+	</div>
+	<br>
+<div> <%= f.label :status %>
+      <%= f.collection_select(:status, Status.all, :name, :name) %>
+  </div>
+	<br>
+<div> <%= f.label :paymentstatus, "Payment Status" %>
+      <%= f.collection_select(:paymentstatus, Pstat.all, :name, :name) %>
+  </div>
 
 <div>
      <%= f.submit "Create new project", class: "btn btn-primary" %>

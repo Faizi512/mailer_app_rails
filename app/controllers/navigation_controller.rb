@@ -27,7 +27,10 @@ class NavigationController < ApplicationController
     @photographers = Photographer.all
     @models = Model.all
     @clients = Client.all
-    @types = Type.all
+    @ctypes = Ctype.all
+    @locations = Location.all
+    @statuses = Status.all
+    @pstat = Pstat.all
     
   end
 

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150723010529) do
+ActiveRecord::Schema.define(version: 20150902204522) do
 
   create_table "admins", force: true do |t|
     t.string   "email",                  default: "", null: false
@@ -48,6 +48,21 @@ ActiveRecord::Schema.define(version: 20150723010529) do
 
   add_index "clients", ["email"], name: "index_clients_on_email", unique: true
 
+  create_table "ctypes", force: true do |t|
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "locations", force: true do |t|
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "project_id"
+  end
+
+  add_index "locations", ["project_id"], name: "index_locations_on_project_id"
+
   create_table "models", force: true do |t|
     t.string   "firstname"
     t.string   "lastname"
@@ -71,6 +86,15 @@ ActiveRecord::Schema.define(version: 20150723010529) do
     t.integer  "age"
   end
 
+  create_table "payment_statuses", force: true do |t|
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "project_id"
+  end
+
+  add_index "payment_statuses", ["project_id"], name: "index_payment_statuses_on_project_id"
+
   create_table "photographers", force: true do |t|
     t.string   "name"
     t.string   "email"
@@ -84,7 +108,7 @@ ActiveRecord::Schema.define(version: 20150723010529) do
     t.string   "headline"
     t.string   "location"
     t.text     "description"
-    t.string   "type"
+    t.string   "ctype"
     t.string   "status"
     t.string   "paymentstatus"
     t.integer  "client_id"
@@ -94,6 +118,21 @@ ActiveRecord::Schema.define(version: 20150723010529) do
 
   add_index "projects", ["client_id", "created_at"], name: "index_projects_on_client_id_and_created_at"
   add_index "projects", ["client_id"], name: "index_projects_on_client_id"
+
+  create_table "pstats", force: true do |t|
+    t.string   "name"
+    t.integer  "project_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "pstats", ["project_id"], name: "index_pstats_on_project_id"
+
+  create_table "statuses", force: true do |t|
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "types", force: true do |t|
     t.string   "name"

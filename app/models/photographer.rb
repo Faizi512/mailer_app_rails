@@ -12,8 +12,7 @@
 
 class Photographer < ActiveRecord::Base
 
-# add validations and constraints
-
+validates :name, presence: true
 
 
 

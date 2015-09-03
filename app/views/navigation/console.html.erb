@@ -28,8 +28,29 @@
 <br>
 <div><%= "Category Management" %></div>
 <ul>
-<li><%=link_to "View all photography categories", types_path %> (<%= @types.count %>) </li>
-<li><%=link_to "Add new Photography Category", new_type_path %></li>
+<li><%=link_to "View all photography categories", ctypes_path %> (<%= @ctypes.count %>) </li>
+<li><%=link_to "Add new photography Category", new_ctype_path %></li>
+</ul>
+<hr>
+<br>
+<div><%= "Location Management" %></div>
+<ul>
+<li><%=link_to "View all locations", locations_path %> (<%= @locations.count %>) </li>
+<li><%=link_to "Add new location", new_location_path %></li>
+</ul>
+<hr>
+<br>
+<div><%= "Project Status Management" %></div>
+<ul>
+<li><%=link_to "View all Statuses", statuses_path %> (<%= @statuses.count %>) </li>
+<li><%=link_to "Add new Status", new_status_path %></li>
+</ul>
+<hr>
+<br>
+<div><%= "Payment Status Management" %></div>
+<ul>
+<li><%=link_to "View all Payment Status options", pstats_path %> (<%= @pstat.count %>) </li>
+<li><%=link_to "Add new Payment Status", new_pstat_path %></li>
 </ul>
 <hr>
 <br>
