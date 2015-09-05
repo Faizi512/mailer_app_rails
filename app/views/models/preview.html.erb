@@ -1,0 +1,12 @@
+<div class="container" id="containerb">
+
+	<p class="attn"> Preview Page </p>
+ 
+
+ <% @models.each do |m| %>
+
+
+	<div> <%= image_tag (m.avatar.url(:square)) %> </div>
+
+<% end %>
+</div>

@@ -22,7 +22,9 @@ root 'navigation#home'
 
   get '/home' => 'navigation#home'
 
-  get '/console' => 'navigation#console'                              
+  get '/console' => 'navigation#console'       
+
+  get '/preview' => 'models#preview'                       
 
 
   get 'login' => 'sessions#new'

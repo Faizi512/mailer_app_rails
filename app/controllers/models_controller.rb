@@ -24,6 +24,12 @@ class ModelsController < ApplicationController
     respond_with(@model)
   end
 
+  def preview
+    @models = Model.all
+
+  end
+
+
   def edit
   end
 
