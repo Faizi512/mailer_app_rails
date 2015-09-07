@@ -1,7 +1,7 @@
 class ModelsController < ApplicationController
   before_action :set_model, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_admin!, only: [:new, :edit, :create, :update, :destroy]
-  before_action :authorized_access, only: [:show]
+  before_action :authorized_access, only: [:show, :index]
   respond_to :html
 
   def index
@@ -26,7 +26,6 @@ class ModelsController < ApplicationController
 
   def preview
     @models = Model.all
-
   end
 
 

@@ -1,12 +1,33 @@
-<div class="container" id="containerb">
+<div class="container-fluid" id="containerc">
 
 	<p class="attn"> Preview Page </p>
  
 
+
  <% @models.each do |m| %>
 
+<div class="item row"> 
+	<div class="bord">
+		<%= link_to(image_tag(m.avatar.url(:square)), model_path(m))%>
+	</div>
+</div>
 
-	<div> <%= image_tag (m.avatar.url(:square)) %> </div>
 
 <% end %>
 </div>
+
+
+<script>
+// initialize Isotope
+var $container = $('#containerc').isotope({
+  itemSelector: '.item',
+   masonry: {
+    columnWidth: 50
+  }
+});
+// layout Isotope again after all images have loaded
+$container.imagesLoaded( function() {
+  $container.isotope('layout');
+});
+
+</script>

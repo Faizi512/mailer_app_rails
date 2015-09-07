@@ -28,8 +28,11 @@
         <td><%= model.waist %></td>
         <td><%= model.hips %></td>
         <td><%= link_to 'Show', model %></td>
+
+        <% if admin_signed_in? %>
         <td><%= link_to 'Edit', edit_model_path(model) %></td>
         <td><%= link_to 'Destroy', model, method: :delete, data: { confirm: 'Are you sure? This action cannot be undone' } %></td>
+        <% end %>
       </tr>
     <% end %>
   </tbody>

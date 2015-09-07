@@ -64,10 +64,12 @@
   <%= @model.hips %>
 </p>
 
+<% if admin_signed_in? %>
 <p>
   <strong>Phone number:</strong>
   <%= @model.phonenumber %>
 </p>
+<% end %>
 
 <div>
 <%= link_to 'Edit', edit_model_path(@model), class: "btn btn-sm
