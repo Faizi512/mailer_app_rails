@@ -23,6 +23,7 @@ gem 'wicked_pdf'
 group :development do
 	gem 'sqlite3'
 	gem 'annotate'
+	gem 'sextant'
 end
 # Use sqlite3 as the database for Active Record
 

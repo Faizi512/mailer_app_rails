@@ -30,11 +30,8 @@ class Model < ActiveRecord::Base
     thumb: '100x100>',
     square: '200x200#',
     medium: '300x300>'}, :storage => :s3,
-    :s3_credentials => Proc.new{|a| a.instance.s3_credentials }
-
-    def s3_credentials 
-    	{ :bucket => "ntpkhi", :access_key_id => "AKIAIQ6BFBC4L7GDHHCQ", :secret_access_key => "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" }
-    end
+    :s3_credentials => "#{Rails.root}/config/aws.yml",
+    :bucket => "ntpkhi"
  
   validates :firstname, presence: true
   validates :lastname, presence: true
