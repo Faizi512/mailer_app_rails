@@ -19,6 +19,12 @@
  
 }
 
+.altlogo {
+
+  display: none;
+
+}
+
 #logo:hover {
   color: #e5e5e5;
   text-decoration: none;
@@ -26,12 +32,12 @@
 
 /* navbar */
 
-.navbar {
+.navbar-default {
 
-background-color: transparent;
-background: transparent;
+background-color: transparent !important;
+background: transparent !important;
 box-shadow: none !important;
-border: none;
+border: none !important;
 
 }
 
@@ -46,12 +52,17 @@ border: none;
 
 /* Navbar Menu Link Color */
 
-.navbar-right > li > a {
+.navbar-default > li > a {
 
-  color: #51a3a3;
   font-size: 15px;
 
 }
+
+.nav > li > a {
+
+  color: #51a3a3 !important;
+}
+
 
 /* Navbar Menu Rollover */
 
@@ -59,6 +70,8 @@ border: none;
 
   background-color: transparent !important;
   font-weight: bold;
+  color: #51a3a3 !important;
+
 
 }
 
@@ -362,9 +375,27 @@ bottom: 20px;
 
 @media (max-width: 767px) {
 
+#logo { 
 
+display: none;
 
+}
 
+.altlogo {
+
+  display: inherit;
+  padding-left: 7px;
+  padding-top: 10px;
+  font-size: 16px;
+  font-family: 'Oxygen';
+  color: #6bddee !important;
+
+}
+
+.col-md-3 {
+
+  
+}
 
 }
 
@@ -423,47 +454,6 @@ $gray-medium-light: #eaeaea;
   @extend .has-error;
   .form-control {
     color: $state-danger-text;
-  }
-}
-
-
-/* hartl */
-
-.microposts {
-  list-style: none;
-  padding: 0;
-  li {
-    padding: 10px 0;
-    border-top: 1px solid #e8e8e8;
-  }
-  .user {
-    margin-top: 5em;
-    padding-top: 0;
-  }
-  .content {
-    display: block;
-    margin-left: 60px;
-    img {
-      display: block;
-      padding: 5px 0;
-    }
-  }
-  .timestamp {
-    color: $gray-light;
-    display: block;
-    margin-left: 60px;
-  }
-  .gravatar {
-    float: left;
-    margin-right: 10px;
-    margin-top: 5px;
-  }
-}
-
-aside {
-  textarea {
-    height: 100px;
-    margin-bottom: 5px;
   }
 }
 
