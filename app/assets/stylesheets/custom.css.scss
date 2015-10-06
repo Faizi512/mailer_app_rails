@@ -322,13 +322,11 @@ color: #51a3a3;
 
 }
 
-#lowest {
+#catalyst {
 
-
-
+text-align: right;
 
 }
-
 
 .col-md-4 li {
 
@@ -392,9 +390,18 @@ display: none;
 
 }
 
-.col-md-3 {
+.recent {
 
-  
+  height: 200px;
+  min-height: 150px;
+  margin-top: 10px;
+
+}
+
+#catalyst {
+
+text-align: left;
+
 }
 
 }
