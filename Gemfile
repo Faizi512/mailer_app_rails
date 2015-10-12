@@ -19,6 +19,8 @@ gem 'bootstrap-will_paginate'
 
 gem 'wicked_pdf'
 
+gem "rails-erd"
+
 
 group :development do
 	gem 'sqlite3'

@@ -42,6 +42,13 @@
 <div> Payment Status: <%= @project.paymentstatus %> </div>
 
 <br>
+<br>
+<div>
+  <%= link_to "Add Photos to Project", new_photo_path(@client, @project) %>
+</div>
+
+<br>
+<br>
 
 <%= link_to "Back to Client Profile page", client_path(@client) %> |  <%= link_to 'Delete', "#", method: :delete, data: { confirm: 'Are you sure?' } %></td>
 </div>

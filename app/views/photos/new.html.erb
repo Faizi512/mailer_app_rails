@@ -1,0 +1,34 @@
+
+<div class="container" id="containerb">
+
+<p class="attn"> Add Photos</p>
+
+<hr>
+<br>
+
+<div> Client Name: <%= @client.name %> </div>
+
+<div> Project Description: <%= @project.description %> </div>
+
+<br>
+
+<div>
+<%= form_for @photo, :html => { multipart: true } do |f| %> 
+
+
+<div>
+    <%= f.label :asset, :class => 'control-label' %>
+
+   <%= file_field(:photo, :asset, :multiple => true) %>
+ 
+  </div>
+
+  <br>
+
+  <div>
+     <%= f.submit "Add photos to project", class: "btn btn-primary btn-xs" %>
+ </div>
+
+  <% end %>
+
+</div>

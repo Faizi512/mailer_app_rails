@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150902204522) do
+ActiveRecord::Schema.define(version: 20151010231606) do
 
   create_table "admins", force: true do |t|
     t.string   "email",                  default: "", null: false
@@ -102,6 +102,18 @@ ActiveRecord::Schema.define(version: 20150902204522) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  create_table "photos", force: true do |t|
+    t.integer  "project_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "asset_file_name"
+    t.string   "asset_content_type"
+    t.integer  "asset_file_size"
+    t.datetime "asset_updated_at"
+  end
+
+  add_index "photos", ["project_id"], name: "index_photos_on_project_id"
 
   create_table "projects", force: true do |t|
     t.date     "date"
