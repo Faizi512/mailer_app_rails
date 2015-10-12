@@ -7,9 +7,12 @@ class PhotosController < ApplicationController
 
   def create
 
+ @project = Project.find_by(params[:id])
+
   params[:photo][:asset].each do |file|
-  @photo = Photo.new(:asset => file)
+  @photo = @project.photos.build(:asset => file)
   @photo.save
+
 end
 
   end
@@ -18,6 +21,10 @@ end
   end
 
  def show
+
+  @project = Project.find_by(params[:id])
+  @photo = Photo.all
+
  end
 
  def destroy

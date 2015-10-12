@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
 
 
-resources :photos, :only => [:new, :create, :edit]
+resources :photos, :only => [:new, :create, :edit, :show]
 
   resources :pstats
 
