@@ -25,6 +25,7 @@ end
   @project = Project.find_by(params[:id])
   @photo = Photo.all
 
+
  end
 
  def destroy

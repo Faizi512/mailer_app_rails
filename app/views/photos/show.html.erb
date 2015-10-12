@@ -10,7 +10,11 @@
 
 <h3> Hello again! </h3>
 
-<%= @photo.empty? %>
+<% @project.photos.each do |p| %>
+
+<%= image_tag(p.asset.url(:square)) %>
+
+<% end %>
 
 </div>
 
