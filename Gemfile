@@ -19,7 +19,9 @@ gem 'bootstrap-will_paginate'
 
 gem 'wicked_pdf'
 
-gem "rails-erd"
+gem 'rails-erd'
+
+gem 'fancybox-rails'
 
 
 group :development do

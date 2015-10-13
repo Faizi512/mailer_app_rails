@@ -2,9 +2,11 @@
 
   <span class="client"><%= link_to project.client.name, project.client %> </span> | 
   <span class="category"><%= project.location %></span> | 
-  <%= link_to "view details", client_project_path(@client, project) %>
+  <span class="description"><%= project.description %></span> |
+  <%= link_to "view details", client_project_path(@client, project), class: "btn btn-link linktext" %> |  <%= link_to "add photos", new_photo_path(@client, @project), class: "btn btn-link linktext" %>
   <span class="timestamp">
     Created <%= time_ago_in_words(project.created_at) %> ago.
   </span>
 
 </li>
+

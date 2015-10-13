@@ -7,15 +7,20 @@ class PhotosController < ApplicationController
 
   def create
 
- @project = Project.find_by(params[:id])
+     @project = Project.find_by(params[:id])
 
-  params[:photo][:asset].each do |file|
-  @photo = @project.photos.build(:asset => file)
-  @photo.save
 
-end
-
+      params[:photo][:asset].each do |file|
+      @photo = @project.photos.build(:asset => file)
+      if
+        @photo.save
+        flash.now[:notice] = 'Photos uploaded!'
+    else
+       flash.now[:alert] = 'No files added!'
+       render 'new'
+    end
   end
+end
 
   def edit
   end

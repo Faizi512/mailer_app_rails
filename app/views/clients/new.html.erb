@@ -3,41 +3,40 @@
 
 <% provide(:title, 'Sign up') %>
 
-<h3>Sign up</h3>
+<p class="attn">Add New Client</p>
 
-<div class="row">
-  <div class="col-md-6 col-md-offset-3">
+<br>
+
     <%= form_for(@client, multipart: true) do |f| %>
     <%= render 'shared/error_messages' %>
 
-      <%= f.label :name %>
-      <%= f.text_field :name, autofocus: true  %>
+<div>  <%= f.label :name, 'Client Name', class: 'label1' %> </div>
+<div>  <%= f.text_field :name, autofocus: true  %> </div> </br>
 
-      <%= f.label :email %>
-      <%= f.email_field :email %>
+<div> <%= f.label :email, class: 'label1' %> </div>
+<div> <%= f.email_field :email %> </div> </br>
 
-      <%= f.label :nameofcontact, 'Name of Contact' %>
-      <%= f.text_field :nameofcontact %>
+<div> <%= f.label :nameofcontact, 'Name of Contact', class: 'label1' %> </div>
+<div> <%= f.text_field :nameofcontact %> </div> </br>
 
-      <%= f.label :phonenumber, 'Phone Number' %>
-      <%= f.text_field :phonenumber %>
+<div> <%= f.label :phonenumber, 'Phone Number', class: 'label1' %> </div>
+<div> <%= f.text_field :phonenumber %> </div> </br>
 
-      <%= f.label :mailingaddress, 'Mailing Address' %>
-      <%= f.text_field :mailingaddress %>
+<div> <%= f.label :mailingaddress, 'Mailing Address', class: 'label1' %> </div>
+<div> <%= f.text_field :mailingaddress %> </div> </br>
 
-      <%= f.label :password %>
-      <%= f.password_field :password %>
+<div> <%= f.label :password, class: 'label1' %> </div>
+<div> <%= f.password_field :password %> </div> </br>
 
-      <%= f.label :password_confirmation, "Confirmation" %>
-      <%= f.password_field :password_confirmation %>
+<div> <%= f.label :password_confirmation, "Password Confirmation", class: 'label1' %> </div>
+<div> <%= f.password_field :password_confirmation %> </div> </br>
 
-       <div class="field">
-        <%= f.label :logo %>
-        <%= f.file_field :logo %>
-      </div>
-
-      <%= f.submit "Create new client", class: "btn btn-primary" %>
-    <% end %>
-  </div>
+<div class="field">
+      <%= f.label :logo, class: 'label1' %>
+      <%= f.file_field :logo %>
 </div>
+</br>
+
+      <%= f.submit "Create new client", class: "btn btn-success btn-sm" %>
+    <% end %>
 </div>

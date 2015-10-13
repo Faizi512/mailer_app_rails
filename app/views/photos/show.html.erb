@@ -2,19 +2,24 @@
 
 <div class="container" id="containerb">
 
-<p class="attn"> Show Project Photos </p>
+<p class="attn"> Project Photos </p>
 
 <hr>
 <br>
 
+<div>
+	<% @project.photos.each do |p| %>
 
-<h3> Hello again! </h3>
+	<%= image_tag(p.asset.url(:square)) %>
 
-<% @project.photos.each do |p| %>
-
-<%= image_tag(p.asset.url(:square)) %>
-
-<% end %>
-
+	<% end %>
 </div>
 
+</br>
+
+<div>
+	<%= link_to 'Back', :back, class: "btn btn-default btn-sm linktext" %>
+</div>
+
+
+</div>

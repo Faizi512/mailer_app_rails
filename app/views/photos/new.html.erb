@@ -17,7 +17,7 @@
 
 
 <div>
-    <%= f.label :asset, 'Project Photos', :class => 'control-label' %>
+    <%= f.label :asset, 'Project Photos', class: 'label1' %>
 
    <%= file_field(:photo, :asset, :multiple => true) %>
  
@@ -26,7 +26,8 @@
   <br>
 
   <div>
-     <%= f.submit "Add photos to project", class: "btn btn-primary btn-xs" %>
+     <%= f.submit "Add photos to project", class: "btn btn-success btn-sm" %>
+     <%= link_to 'Back', :back, class: "btn btn-default btn-sm linktext" %>
  </div>
 
   <% end %>

@@ -194,6 +194,18 @@ margin-top: 130px;
 
 }
 
+.idbox {
+
+list-style: none;
+max-width: 90px;
+min-width: 90px;
+max-height: 90px;
+min-width: 90px;
+background: #e5e5e5;
+text-align: center;
+
+}
+
 
 /* Contact Page CSS */
 
@@ -290,9 +302,47 @@ padding-right: 125px;
 font-family: 'Exo 2';
 font-weight: 300;
 font-size: 22px;
-color: #daa536;
+color: #f2b804;
 
 }
+
+.linktext { 
+
+color: #60ba09 !important;
+
+}
+
+.linkdanger {
+
+color: #ea6d6d !important;
+
+}
+
+
+.linkdanger:hover {
+
+font: bold;
+
+}
+
+.label1 {
+
+color: #bababa;
+
+}
+
+.btn-success {
+
+background: #60ba09 !important; 
+
+}
+
+.btn-success:hover {
+
+background: #499202 !important; 
+
+}
+
 
 /* Remove bullets from ul */
 
@@ -314,6 +364,13 @@ font-weight: 400;
 font-size: 22px;
 
 }
+
+.borderless {
+
+border: none;
+
+}
+
 
 
 .footerheader {

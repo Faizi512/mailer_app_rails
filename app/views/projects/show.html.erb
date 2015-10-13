@@ -2,7 +2,7 @@
 
 <div class="container" id="containerb">
 
-<p class="attn"> Show Client Project Details </p>
+<p class="attn"> Project Details </p>
 
 <hr>
 <br>
@@ -44,13 +44,16 @@
 <br>
 <br>
 <div>
-  <%= link_to "Add Photos to Project", new_photo_path(@client, @project) %>
+  <%= link_to "Add Photos to Project", new_photo_path(@client, @project), class: "btn btn-default btn-sm" %>
+
+<%= link_to "View Photos", photo_path(@project), class: "btn btn-default btn-sm" %>
+
 </div>
 
 <br>
-<br>
 
-<%= link_to "Back to Client Profile page", client_path(@client) %> |  <%= link_to 'Delete', "#", method: :delete, data: { confirm: 'Are you sure?' } %></td>
+<%= link_to "Back to Client Profile page", client_path(@client), class: "btn btn-default btn-sm linktext" %> 
+<%= link_to 'Delete', "#", method: :delete, data: { confirm: 'Deleting this project will also permanently delete all images associated with this project. Are you sure you wish to proceed?' }, class: "btn btn-danger btn-sm" %>
+
 </div>
 
-<%= link_to "View Photos", photo_path(@project) %>
