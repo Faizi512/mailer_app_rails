@@ -207,6 +207,85 @@ text-align: center;
 }
 
 
+.square {
+
+  width: 200px;
+  height: 100px;
+  background: #e5e5e5;
+  margin-right: 2px !important;
+  margin-top: 2px;
+  margin-bottom: 2px;
+  margin-left: 2px !important;
+
+}
+
+
+.consoleboxtitle {
+
+padding-top: 2px;
+padding-bottom: 5px;
+
+}
+
+.consolebox {
+
+font-family: 'Exo 2';
+font-weight: 200;
+font-size: 14px;
+list-style-type: none;
+padding: 0;
+margin: 0;
+text-align: center;
+color: #ffffff !important;
+
+}
+
+.consolebox li {
+
+display: inline-block;
+
+}
+
+
+/* Console Menu Colors */
+
+#cone {
+
+  background-color: #f9dcd3 !important;
+
+}
+
+#ctwo {
+
+  background-color: #f9e0e0 !important;
+
+}
+
+
+#cthree {
+
+  background-color: #f2b3b3 !important;
+
+}
+
+#cfour {
+
+  background-color: #a7a3a3 !important;
+
+}
+
+#cfive {
+
+  background-color: #dbd6cd !important;
+
+}
+
+#csix {
+
+  background-color: #e9f2f9 !important;
+
+}
+
 /* Contact Page CSS */
 
 .map {
@@ -277,7 +356,7 @@ background-color: #477bba;
 .footdivider {
 
 height: 1px;
-background-color: #f7ed00;
+background-color: #084d81;
 margin-top: 120px;
 
 }
@@ -334,6 +413,7 @@ color: #bababa;
 .btn-success {
 
 background: #60ba09 !important; 
+color: #ffffff !important;
 
 }
 

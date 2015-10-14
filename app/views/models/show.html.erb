@@ -75,9 +75,7 @@
 <%= link_to 'Edit', edit_model_path(@model), class: "btn btn-sm
  btn-warning" %>
  <% end %>
-<%= link_to 'Back', models_path, class: "btn btn-sm
- btn-info" %> </div><br>
-<div><%= link_to 'Download PDF', model_path(@model, :format => "pdf"), :target => '_blank', class: "btn btn-xs
- btn-info" %><small> PDF file opens in a new window</small></div>
+<%= link_to 'Back', models_path, class: "btn btn-default btn-sm linktext" %> </div><br>
+<div><%= link_to 'Download PDF', model_path(@model, :format => "pdf"), :target => '_blank', class: "btn btn-success btn-sm" %><small> PDF file opens in a new window</small></div>
 
 </div>
