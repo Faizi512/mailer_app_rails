@@ -1,4 +1,8 @@
 class PhotosController < ApplicationController
+ 
+ before_action :authenticate_admin!, only: [:new, :create, :destroy]
+
+
   def new
     
   	 @project = Project.find(params[:project_id])

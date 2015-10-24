@@ -1,5 +1,5 @@
 class ProjectsController < ApplicationController
-	before_action :authenticate_admin!, only: [:new, :create, :destroy, :details]
+	before_action :authenticate_admin!, only: [:new, :create, :destroy, :details, :show]
 
 	def new
 		@client = Client.find(params[:client_id])

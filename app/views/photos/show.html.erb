@@ -19,14 +19,20 @@
 	<% end %>
 
 </div>
+</br>
 
+<div> <%= link_to 'Back', :back, class: "btn btn-default btn-sm linktext" %> <%= link_to "View other Projects", work_path, class: "btn btn-default btn-sm" %> </div>
 
 </br>
 
 <% if admin_signed_in? %>
 
 <hr>
+
 </br>
+
+<small><em> This section is only visible to Administrative users of the NTP web app </em </small>
+</br></br>
 
 <div class="row">
 	<div class="col-md-12">
@@ -59,7 +65,6 @@
 </div>
 </div>
 
-<% end %>
 
 
 </br>
@@ -71,6 +76,8 @@
 
 	<%= link_to client_path(@client), class: "btn btn-default btn-sm linktext" do %> 
 <span class="glyphicon glyphicon-arrow-left"></span> Back to Client Profile page
+<% end %>
+
 <% end %>
 
 
