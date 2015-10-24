@@ -5,6 +5,11 @@ class NavigationController < ApplicationController
   end
 
   def work
+
+    @projects = Project.all
+
+
+
   end
 
   def about

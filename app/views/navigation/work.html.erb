@@ -2,66 +2,48 @@
 
 
 <div class="container-fluid" id="containeri">
+  <% @projects.each do |x| %>
+  <div class="Witem row thumbnail <%= x.ctype %>">
+
+    <% x.photos.limit(1).each do |y| %>
+
+    <%= image_tag(y.asset.url(:square)) %>
+
+    <% end %>
+
+
+     <h4 class="little" id="thumbnail-label"> <%= x.client.name %> </h4>
+
+   </br>
+
+    <div> Type: <%= x.ctype %> </div>
+    <div> Location: <%= x.location %> </div>
   
-  <div class="item row thumbnail fashion">
-      <%= image_tag("Azwer.jpg", size: "225x100", alt: "Edit Entry") %>
-      <h4 class="little" id="thumbnail-label">Nida Azwer Atelier</h4>
-      <p class="listnolist">Designer: Nida Azwer<br>
-       Model: Fayezah Asad Ansari.</p><br>
-      <%= link_to "View Set" %>
-  </div>
 
-  <div class="item row thumbnail fashion"> 
-
-<%= image_tag("Nadya-1.jpg", size: "225x100", alt: "Edit Entry") %>
-<h4 class="little" id="thumbnail-label">NH Pret</h4>
-<p class="listnolist">Published: OK Pakistan<br>
- Model: Nadia Hussain.</p><br>
-<%= link_to "View Set" %>
-
-  </div>
-
-  <div class="item row thumbnail architecture">
-
-<%= image_tag("Archi-1.jpg", size: "225x100", alt: "Edit Entry") %>
-<h4 class="little" id="thumbnail-label">Copper & Steel</h4>
-<p class="listnolist">Location: Phase 8, Karachi<br>
- Property: Residential.</p><br>
-<%= link_to "View Set" %>
-
-  </div>
-
-  <div class="item row thumbnail fashion">
-
-<%= image_tag("Ayaan-1.jpg", size: "225x100", alt: "Edit Entry") %>
-<h4 class="little" id="thumbnail-label">Maheen Khan</h4>
-<p class="listnolist">Published: She Magazine<br>
- Designer: Maheen Khan.<br>
-Model: Ayaan</p><br>
-<%= link_to "View Set" %>
-
-  </div>
+  </br>
+</br>
 
 
+    <%= link_to "View Set", project_photo_path(x, x.photos), class: "btn btn-default btn-sm" %>
+
+  </br>
+  <hr>
 
 
+  </div> <!-- Project Div -->
+
+   <% end %>
+
+</div> <!-- Container-Fluid -->
 
 
-</div> <!-- End of Container -->
-
-<div id="filters" class="button-group">
-   <button type="button" class="btn btn-link" data-filter="*">All</button>
-  <button type="button" class="btn btn-link"  data-filter=".fashion">Fashion</button>
-  <button type="button" class="btn btn-link"  data-filter=".architecture">Architecture</button>
-
-</div>
 
 <script>
 // initialize Isotope
 var $container = $('#containeri').isotope({
-  itemSelector: '.item',
+  itemSelector: '.Witem',
    masonry: {
-    columnWidth: 50
+    columnWidth: 225
   }
 });
 // layout Isotope again after all images have loaded

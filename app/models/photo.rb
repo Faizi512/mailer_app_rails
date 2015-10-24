@@ -21,7 +21,7 @@ class Photo < ActiveRecord::Base
     medium: '300x300>'
   }, :storage => :s3,
     :s3_credentials => "#{Rails.root}/config/aws.yml",
-    :bucket => "ntpkhi"
+    :bucket => "ntpkhi", default_url: "/images/:style/missing.png"
 
    
   
