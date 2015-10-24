@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
 
 
-resources :photos, :only => [:new, :create, :edit, :show]
+
 
   resources :pstats
 
@@ -34,6 +34,12 @@ root 'navigation#home'
 
   resources :clients do
       resources :projects
+    end
+
+    resources :projects do
+      resources :photos do
+        delete :destroy_multiple, action: :destroy, on: :collection
+      end
     end
 
 

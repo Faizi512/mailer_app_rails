@@ -13,9 +13,12 @@
   <div class="col-md-8">
     <% if @client.projects.any? %>
       <p class="attn">Projects (<%= @client.projects.count %>)</p>
-      <ol class="projects">
-        <%= render @projects %>
-      </ol>
+    <% @client.projects.each do |x| %>
+  <ul>
+    <li><%= link_to x.client.name, x.client %> | <%= x.description %> | <%= link_to "project details", client_project_path(@client, x), class: "btn btn-link linktext" %> | <small> Created <%= time_ago_in_words(x.created_at) %> ago.</small></li> 
+  </ul>
+  <% end %>
+
       <%= will_paginate @projects %>
     <% end %>
   </div>

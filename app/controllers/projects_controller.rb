@@ -3,7 +3,7 @@ class ProjectsController < ApplicationController
 
 	def new
 		@client = Client.find(params[:client_id])
-		@project = @client.projects.build
+		@project = Project.new
 	end
 
 	def create
@@ -28,7 +28,8 @@ class ProjectsController < ApplicationController
 
 	def show
 		@client = Client.find(params[:client_id])
-		@project = @client.projects.find_by(params[:id])
+		@project = Project.find(params[:id])
+		@photo = @project.photos.find_by(params[:photo_id])
 	end
 
 	private

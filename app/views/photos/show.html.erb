@@ -7,19 +7,73 @@
 <hr>
 <br>
 
+
+
 <div>
 	<% @project.photos.each do |p| %>
 
-	<%= image_tag(p.asset.url(:square)) %>
+		<%= image_tag(p.asset.url(:square)) %> 
+
+		
 
 	<% end %>
+
 </div>
+
+
+</br>
+
+<% if admin_signed_in? %>
+
+<hr>
+</br>
+
+<div class="row">
+	<div class="col-md-12">
+
+		<div> Number of Photos: <%=@project.photos.count %><div>
+		<div> Photo ID's: <%=@project.photos.map { |x| x.id} %><div>
+		<div> Project ID: <%=@project.id %><div>
+		<div> Photo Description: <%=@project.description %><div>
+
+
+
+		</br>
+
+	
+
+<%= form_tag destroy_multiple_project_photos_path, method: :delete do %>
+<ul class="consolebox">
+<% @project.photos.each do |p| %>
+<li>
+<%= check_box_tag 'destruction[]', p.id %>
+<%= image_tag(p.asset.url(:square)) %> 
+</li>
+<% end %>
+</ul>
+</br>
+<%= submit_tag "Delete selected", class: "btn btn-danger btn-sm" %>
+<% end %>
+
+
+</div>
+</div>
+
+<% end %>
+
 
 </br>
 
 <div>
-	<%= link_to 'Back', :back, class: "btn btn-default btn-sm linktext" %>
-</div>
+	<%= link_to client_project_path(@client, @project), class: "btn btn-default btn-sm linktext" do %> 
+<span class="glyphicon glyphicon-arrow-left"></span> Back to Project Overview
+<% end %>
+
+	<%= link_to client_path(@client), class: "btn btn-default btn-sm linktext" do %> 
+<span class="glyphicon glyphicon-arrow-left"></span> Back to Client Profile page
+<% end %>
 
 
 </div>
+
+

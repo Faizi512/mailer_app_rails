@@ -22,8 +22,11 @@ class Photo < ActiveRecord::Base
   }, :storage => :s3,
     :s3_credentials => "#{Rails.root}/config/aws.yml",
     :bucket => "ntpkhi"
+
+   
   
   do_not_validate_attachment_file_type :asset
+  validates_attachment_size :asset, :less_than => 4.megabytes
 
   
 end

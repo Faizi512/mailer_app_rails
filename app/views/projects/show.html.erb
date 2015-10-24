@@ -2,6 +2,9 @@
 
 <div class="container" id="containerb">
 
+	<div class="row">
+		<div class="col-md-5">
+
 <p class="attn"> Project Details </p>
 
 <hr>
@@ -42,18 +45,52 @@
 <div> Payment Status: <%= @project.paymentstatus %> </div>
 
 <br>
-<br>
+<br>glibglib
 <div>
-  <%= link_to "Add Photos to Project", new_photo_path(@client, @project), class: "btn btn-default btn-sm" %>
+  <%= link_to "Add Photos to Project", new_project_photo_path(@project), class: "btn btn-default btn-sm" %>
 
-<%= link_to "View Photos", photo_path(@project), class: "btn btn-default btn-sm" %>
+<%= link_to "View Photos", project_photo_path(@project, @photo), class: "btn btn-default btn-sm" %>
 
 </div>
 
 <br>
 
-<%= link_to "Back to Client Profile page", client_path(@client), class: "btn btn-default btn-sm linktext" %> 
+<%= link_to client_path(@client), class: "btn btn-default btn-sm linktext" do %> 
+<span class="glyphicon glyphicon-arrow-left"></span> Back to Client Profile page
+<% end %>
+
 <%= link_to 'Delete', "#", method: :delete, data: { confirm: 'Deleting this project will also permanently delete all images associated with this project. Are you sure you wish to proceed?' }, class: "btn btn-danger btn-sm" %>
 
+
+</div>
+
+
+<div class="col-md-7">
+
+	<p class="attn"> Project Thumbnails </p>
+
+<hr>
+<br>
+
+<% @project.photos.each do |x| %>
+
+<%= image_tag(x.asset.url(:thumb)) %> 
+
+<% end %>
+
+</br>
+</br>
+
+<% if @project.photos.any? %>
+
+<small><em> To see larger images or remove any/all of the current images for this project, please click on "View Photos" in the Project Details menu. To add additional images, please click on the "Add Photos to Project" button. </em></small>
+
+<% else %>
+
+<small><em> This project currently does not have any images associated with it." To add imagery, please click on the "Add Photos to Project" button in the Project Details menu. </em></small>
+
+<% end %>
+
+</div>
 </div>
 

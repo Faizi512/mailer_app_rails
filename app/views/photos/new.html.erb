@@ -10,10 +10,12 @@
 
 <div> Project Description: <%= @project.description %> </div>
 
+<div> Project ID: <%= @project.id %> </div>
+
 <br>
 
 <div>
-<%= form_for @photo, :html => { multipart: true } do |f| %> 
+<%= form_for ([@project, @photo]), :html => { multipart: true } do |f| %> 
 
 
 <div>
@@ -26,7 +28,7 @@
   <br>
 
   <div>
-     <%= f.submit "Add photos to project", class: "btn btn-success btn-sm" %>
+     <%= f.submit "Add photos to project", class: "btn btn-success btn-sm" %> <div><em> Please ensure the total file size of all attachments does not exceed 4 MB</em></div>
      <%= link_to 'Back', :back, class: "btn btn-default btn-sm linktext" %>
  </div>
 

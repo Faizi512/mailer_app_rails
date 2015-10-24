@@ -1,12 +1,8 @@
 <li id="project-<%= project.id %>">
 
-  <span class="client"><%= link_to project.client.name, project.client %> </span> | 
-  <span class="category"><%= project.location %></span> | 
-  <span class="description"><%= project.description %></span> |
-  <%= link_to "view details", client_project_path(@client, project), class: "btn btn-link linktext" %> |  <%= link_to "add photos", new_photo_path(@client, @project), class: "btn btn-link linktext" %>
-  <span class="timestamp">
-    Created <%= time_ago_in_words(project.created_at) %> ago.
-  </span>
-
-</li>
-
+	<% @client.projects.each do |x| %>
+	<ul>
+		<li><%= link_to x.client.name, x.client %> | <%= x.description %> | <%= link_to "project details", client_project_path(@client, x), class: "btn btn-link linktext" %> | <%= link_to "add photos", new_photo_path(@client, x), class: "btn btn-link linktext" %>  | <small> Created <%= time_ago_in_words(x.created_at) %> ago.</small></li> 
+	</ul>
+	<% end %>
+</div>
