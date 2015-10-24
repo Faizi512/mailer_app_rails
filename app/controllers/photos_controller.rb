@@ -18,15 +18,15 @@ class PhotosController < ApplicationController
         @photo.save
         flash.now[:notice] = 'Photos uploaded!'
 
-          respond_to do |format|
-          format.html { redirect_to project_photo_path(@project, @photos) }
-        end
-
     else
        flash.now[:alert] = 'No files added!'
     
     end
   end
+
+          respond_to do |format|
+          format.html { redirect_to project_photo_path(@project, @photos) }
+end
 end
 
   def edit
