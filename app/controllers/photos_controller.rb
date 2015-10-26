@@ -27,9 +27,19 @@ class PhotosController < ApplicationController
     
     end
   end
+      
+     respond_to do |format|
 
-          respond_to do |format|
+        if @project.photos.any?
+         
           format.html { redirect_to project_photo_path(@project, @photos) }
+
+        else 
+         
+          format.html { redirect_to project_path(@project) }
+        
+        end
+
 end
 end
 

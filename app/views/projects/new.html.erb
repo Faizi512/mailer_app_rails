@@ -35,6 +35,12 @@
 <br>
 
   <div> 
+    <%= f.label :photographer, class: 'label1' %>
+    <%= f.collection_select(:photographer, Photographer.all, :name, :name) %>
+  </div>
+<br>
+
+  <div> 
     <%= f.label :status, class: 'label1' %>
     <%= f.collection_select(:status, Status.all, :name, :name) %>
   </div>

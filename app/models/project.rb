@@ -19,6 +19,7 @@ class Project < ActiveRecord::Base
   belongs_to :client
   has_many :locations
   has_many :photos
+  has_one :photographer
  
 
 

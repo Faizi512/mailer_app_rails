@@ -49,7 +49,11 @@
 <div>
   <%= link_to "Add Photos to Project", new_project_photo_path(@project), class: "btn btn-default btn-sm" %>
 
+  <% if @project.photos.any? %>
+
 <%= link_to "View Photos", project_photo_path(@project, @photo), class: "btn btn-default btn-sm" %>
+
+<% end %>
 
 </div>
 
