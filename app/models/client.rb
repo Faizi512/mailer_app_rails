@@ -24,7 +24,7 @@ thumb: '150x150>',
 square: '200x200#',
 }, :storage => :s3,
     :s3_credentials => "#{Rails.root}/config/aws.yml",
-    :bucket => "ntpkhi"
+    :bucket => "ntpkhi3"
 
 
 	has_many :projects, dependent: :destroy

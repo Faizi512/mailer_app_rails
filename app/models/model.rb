@@ -31,7 +31,7 @@ class Model < ActiveRecord::Base
     square: '200x200#',
     medium: '300x300>'}, :storage => :s3,
     :s3_credentials => "#{Rails.root}/config/aws.yml",
-    :bucket => "ntpkhi"
+    :bucket => "ntpkhi3"
  
   validates :firstname, presence: true
   validates :lastname, presence: true

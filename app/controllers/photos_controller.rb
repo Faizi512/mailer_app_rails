@@ -15,6 +15,7 @@ class PhotosController < ApplicationController
 
     @project = Project.find(params[:project_id])
      @photos = @project.photos.find_by(params[:photo_id])
+     @client = @project.client
 
       params[:photo][:asset].each do |file|
       @photo = @project.photos.build(:asset => file)
@@ -32,7 +33,7 @@ class PhotosController < ApplicationController
 
         if @project.photos.any?
          
-          format.html { redirect_to project_photo_path(@project, @photos) }
+          format.html { redirect_to client_path(@client) }
 
         else 
          
