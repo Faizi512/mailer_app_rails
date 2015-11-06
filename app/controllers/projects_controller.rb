@@ -1,5 +1,10 @@
 class ProjectsController < ApplicationController
-	before_action :authenticate_admin!, only: [:new, :create, :destroy, :details, :show]
+	before_action :authenticate_admin!, only: [:new, :index, :create, :destroy, :details, :show]
+
+	def index
+	@projects = Project.all
+	end
+
 
 	def new
 		@client = Client.find(params[:client_id])
@@ -32,10 +37,41 @@ class ProjectsController < ApplicationController
 		@photo = @project.photos.find_by(params[:photo_id])
 	end
 
+	def highlight
+
+
+	Project.where(id: params[:showreel]).update_all(is_featured: true)
+ 		 redirect_to projects_path 
+ 
+	
+	end
+
+
+  def update
+
+
+
+if params[:showreel].any?
+
+@allprojects = Project.all
+@allprojects.update_all(is_featured: false)
+
+  		project_ids = params[:showreel]
+  			project_ids.each do |x|
+  				
+  				@project = Project.find_by_id(x)
+  				@project.update_attribute(:is_featured, true)
+  				@project.save
+  				end
+  					redirect_to projects_path
+  				end
+  			end
+
 	private
 
 	def project_params
-		params.require(:project).permit(:date, :headline, :location, :description, :ctype, :status, :paymentstatus)
+		params.require(:project).permit(:date, :headline, :location, :description, :ctype, :status, :paymentstatus, :is_featured)
 	end
+
 
 end

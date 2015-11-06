@@ -13,6 +13,7 @@
 #  client_id     :integer
 #  created_at    :datetime
 #  updated_at    :datetime
+#  is_featured   :boolean
 #
 
 class Project < ActiveRecord::Base
@@ -20,10 +21,9 @@ class Project < ActiveRecord::Base
   has_many :locations
   has_many :photos
   has_one :photographer
- 
-
 
   default_scope -> { order(created_at: :desc) }
   validates :client_id, presence: true
+
  
 end

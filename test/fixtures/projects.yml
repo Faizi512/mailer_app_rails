@@ -13,6 +13,7 @@
 #  client_id     :integer
 #  created_at    :datetime
 #  updated_at    :datetime
+#  is_featured   :boolean
 #
 
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html

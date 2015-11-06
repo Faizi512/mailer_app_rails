@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151026202735) do
+ActiveRecord::Schema.define(version: 20151104054121) do
 
   create_table "admins", force: true do |t|
     t.string   "email",                  default: "", null: false
@@ -126,6 +126,7 @@ ActiveRecord::Schema.define(version: 20151026202735) do
     t.integer  "client_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.boolean  "is_featured"
   end
 
   add_index "projects", ["client_id", "created_at"], name: "index_projects_on_client_id_and_created_at"

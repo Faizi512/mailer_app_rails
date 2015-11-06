@@ -18,6 +18,7 @@ class Photo < ActiveRecord::Base
     has_attached_file :asset, styles: {
     thumb: '100x100>',
     square: '200x200#',
+    featured: '1550x1031',
     medium: '300x300>'
   }, :storage => :s3,
     :s3_credentials => "#{Rails.root}/config/aws.yml",

@@ -2,6 +2,8 @@ class NavigationController < ApplicationController
   
   def home
 
+@featuredprojects = Project.where("is_featured = ?", true)
+
   end
 
   def work

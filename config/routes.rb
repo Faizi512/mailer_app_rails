@@ -2,7 +2,6 @@ Rails.application.routes.draw do
 
 
 
-
   resources :pstats
 
   resources :ctypes
@@ -25,7 +24,12 @@ root 'navigation#home'
 
   get '/console' => 'navigation#console'       
 
-  get '/preview' => 'models#preview'                       
+  get '/preview' => 'models#preview'    
+
+  devise_scope :admin do 
+  get '/nt' => 'devise/sessions#create'
+  end               
+
 
 
   get 'login' => 'sessions#new'
@@ -40,6 +44,12 @@ root 'navigation#home'
       resources :photos do
         delete :destroy_multiple, action: :destroy, on: :collection
       end
+    end
+
+    resources :projects do
+
+      patch :transform, action: :highlight, on: :collection
+
     end
 
 

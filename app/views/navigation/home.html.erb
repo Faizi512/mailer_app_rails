@@ -1,4 +1,14 @@
 
+
+<% @featuredprojects.each do |x| %>
+
+<%= x.id %>
+<%= x.client.name %>
+
+  <% x.photos.limit(1).each do |y| %>
+
+
+
 <div id="carousel1" class="carousel slide" data-ride="carousel">
   <ol class="carousel-indicators">
     <li data-target="#carousel1" data-slide-to="0" class="active"></li>
@@ -6,19 +16,26 @@
   </ol>
       <div class="carousel-inner" role="listbox">
         <div class="item active">
-          <%= image_tag("NTP-4.jpg") %>
+          <%= image_tag(y.asset.url(:featured)) %>
              <div class="carousel-caption">
-        <button type="button" class="btn btn-default mainviewbutton">View Set</button>
+         <%= link_to "View Set", project_photo_path(x, x.photos), class: "btn btn-default btn-sm viewset" %>
       </div>
       </div>
-      <div class="item">
+
+
+
+ <!--      <div class="item">
         <%= image_tag("NTP-5.jpg")  %>
          <div class="carousel-caption">
         <button type="button" class="btn btn-default mainviewbutton">View Set</button>
       </div>
-        </div>
+        </div> -->
 
-      </div> <!-- Carousel-Inner -->
+      </div> <!-- Carousel-Inner  -->
+
+      <% end %>
+
+          <% end %>
     
     <!-- Carousel Navigation -->
     <a class="left carousel-control" href="#carousel1" role="button" data-slide="prev">
