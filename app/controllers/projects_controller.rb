@@ -28,7 +28,7 @@ class ProjectsController < ApplicationController
 
 		@project.destroy
     	flash[:success] = "Project deleted"
-    	redirect_to request.referrer || client_path(@client)
+    	redirect_to client_path(@client)
 	end
 
 	def show

@@ -2,7 +2,11 @@ class NavigationController < ApplicationController
   
   def home
 
-@featuredprojects = Project.where("is_featured = ?", true)
+    @featuredprojects = Project.where("is_featured = ?", true)
+
+    @projectpreview = Project.all
+
+    @z = @projectpreview.sample(4)
 
   end
 

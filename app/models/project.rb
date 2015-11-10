@@ -14,13 +14,14 @@
 #  created_at    :datetime
 #  updated_at    :datetime
 #  is_featured   :boolean
+#  photographer  :string(255)
 #
 
 class Project < ActiveRecord::Base
   belongs_to :client
   has_many :locations
   has_many :photos
-  has_one :photographer
+
 
   default_scope -> { order(created_at: :desc) }
   validates :client_id, presence: true

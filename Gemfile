@@ -21,7 +21,7 @@ gem 'wicked_pdf'
 
 gem 'rails-erd'
 
-gem 'fancybox-rails'
+gem 'fancybox2-rails'
 
 
 group :development do

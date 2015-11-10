@@ -14,6 +14,7 @@
 #  created_at    :datetime
 #  updated_at    :datetime
 #  is_featured   :boolean
+#  photographer  :string(255)
 #
 
 require 'test_helper'

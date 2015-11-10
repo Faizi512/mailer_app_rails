@@ -6,6 +6,7 @@
 <table class="table table-condensed">
   <thead>
     <tr>
+      <th>Client Name</th>
       <th>Project ID</th>
       <th>Project date</th>
       <th>Category</th>
@@ -20,6 +21,7 @@
   <tbody>
     <% @projects.each do |x| %>
       <tr>
+        <td><%= x.client.name %></td>
         <td><%= x.id %></td>
         <td><%= x.date %></td>
         <td><%= x.ctype %></td>

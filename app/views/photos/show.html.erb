@@ -6,25 +6,49 @@
 
 <hr>
 <br>
+<div class="row">
+		<div class="col-md-3">
+
+			<div class="logoborder"> <%= image_tag(@project.client.logo.url(:thumb)) %></div>
+			<div class="projectdetails">
+				<div> Client Name: <%= @project.client.name %> </div>
+				<div> Location: <%= @project.location %> </div>
+				<div> Type: <%= @project.ctype %> </div>
+			</div>
 
 
+			<div class="whr"></div>
+
+			<div> <%= link_to 'Back', :back, class: "btn btn-default btn-sm linktext" %> <%= link_to "View other Projects", work_path, class: "btn btn-default btn-sm" %> </div>
+</div>
+
+<div class="col-md-9">
 
 <div>
 	<% @project.photos.each do |p| %>
 
-		<%= image_tag(p.asset.url(:square)) %> 
-
-		
-
+		<%= link_to (p.asset.url(:featured)), :class => 'fancybox', :rel => 'group' do %>
+  			<%= image_tag(p.asset.url(:square)) %>
+		<% end %>
 	<% end %>
+
+	<br>
+<small><em> Please click on the thumbnails to view larger versions of the images </em></small>
 
 </div>
 </br>
 
-<div> <%= link_to 'Back', :back, class: "btn btn-default btn-sm linktext" %> <%= link_to "View other Projects", work_path, class: "btn btn-default btn-sm" %> </div>
+
+
+</div>
 
 </br>
 
+</div>
+
+
+<div class="row">
+	<div class="col-md-12">
 <% if admin_signed_in? %>
 
 <hr>
@@ -33,9 +57,6 @@
 
 <small><em> This section is only visible to Administrative users of the NTP web app </em </small>
 </br></br>
-
-<div class="row">
-	<div class="col-md-12">
 
 		<div> Number of Photos: <%=@project.photos.count %><div>
 		<div> Photo ID's: <%=@project.photos.map { |x| x.id} %><div>
@@ -82,5 +103,23 @@
 
 
 </div>
+
+<script>
+$(document).ready(function() {
+  $("a.fancybox").fancybox();
+});
+
+$(".fancybox")
+    .attr('rel', 'gallery')
+    .fancybox({
+        beforeShow: function () {
+            /* Disable right click */
+            $.fancybox.wrap.bind("contextmenu", function (e) {
+                    return false; 
+            });
+        }
+    });
+
+</script>
 
 
