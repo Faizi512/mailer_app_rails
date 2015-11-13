@@ -1,5 +1,5 @@
 
-
+<div class="container-fluid">
 
 
 <div id="carousel1" class="carousel slide" data-ride="carousel">
@@ -16,18 +16,18 @@
                 <% x.photos.limit(1).each do |y| %>
                  </ol>
                     <% if index == 0 %> 
-                      <div class="carousel-inner" role="listbox">
-                      <div class="item active">
+                      <div class="carousel-inner center" role="listbox">
+                      <div class="item active" id="carouselpictureframe">
                     <% else %>
-                      <div class="item">
+                      <div class="item" id="carouselpictureframe">
                     <% end %>
-                <%= image_tag(y.asset.url(:featured)) %>
-              <div class="carousel-caption" id="carouseltext">
-                <ul>
-                  <li> Client: <%= x.client.name %> </li>
-                </ul>
+                <%= image_tag(y.asset.url(:carousel), class: "carouselpicture") %>
+              <div class="carousel-caption" id="carouselcaption">
+              
+                  <p class="carouseltext"> <span><%= x.headline %></span> </p>
                 
-         <%= link_to "View Set", project_photo_path(x, x.photos), class: "btn btn-default btn-sm viewset" %>
+
+         <%= link_to "View Set", project_photo_path(x, x.photos), class: "btn btn-default btn-sm viewset mb" %>
       </div>
 
       </div>
@@ -75,6 +75,8 @@
     <div class="col-xs-6 col-sm-3">
     <%= image_tag("9016.jpg", :class => "recent") %>
   </div>
+</div>
+
 </div>
 
 </div>

@@ -18,9 +18,9 @@ class Photo < ActiveRecord::Base
     has_attached_file :asset, styles: {
     thumb: '100x100>',
     square: '200x200#',
-    featured: '1200x800',
-    preview: '200x300>'
-  }, :storage => :s3,
+    preview: '200x300>',
+    carousel:""
+  }, :convert_options => { :carousel => "-gravity center -crop 1400x720+0+0" }, :storage => :s3,
     :s3_credentials => "#{Rails.root}/config/aws.yml",
     :bucket => "ntpkhi3", default_url: "/images/:style/missing.png"
 

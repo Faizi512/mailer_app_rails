@@ -15,7 +15,7 @@
       <p class="attn">Projects (<%= @client.projects.count %>)</p>
     <% @client.projects.each do |x| %>
   <ul>
-    <li><%= link_to x.client.name, x.client %> | <%= x.description %> | <%= link_to "project details", client_project_path(@client, x), class: "btn btn-link linktext" %> | <small> Created <%= time_ago_in_words(x.created_at) %> ago.</small></li> 
+    <li><%= link_to x.client.name, x.client %> | <%= x.description %> | Project ID: <%= x.id %> |<%= link_to "project details", client_project_path(@client, x), class: "btn btn-link linktext" %> | <%= link_to "edit", edit_client_project_path(@client,x), class: "btn btn-link linktext" %><small> Created <%= time_ago_in_words(x.created_at) %> ago.</small></li> 
   </ul>
   <% end %>
 

@@ -1,1 +1,61 @@
-e
+<div class="container" id="containerb">
+
+<br>
+
+<p class="attn"> Edit a <%= @client.name %> project </p>
+
+</br>
+
+<div>
+<%= form_for ([@client, @project]) do |f| %>
+<%= render 'shared/error_messages' %>
+
+
+  <div> 
+    <%= f.label :ctype, "Category", class: 'label1' %>
+    <%= f.collection_select(:ctype, Ctype.all, :name, :name) %>
+  </div>
+<br>
+
+  <div> 
+    <%= f.label :location, class: 'label1' %>
+    <%= f.collection_select(:location, Location.all, :name, :name) %>
+  </div>
+<br>
+
+  <div> 
+    <%= f.label :description, class: 'label1' %>
+	  <%= f.text_area :description, size: "60x7", class: 'formalign' %>
+	</div>
+<br>
+
+  <div> 
+    <%= f.label :headline, class: 'label1' %>
+	  <%= f.text_field :headline, class: 'formalign' %>
+	</div>
+<br>
+
+  <div> 
+    <%= f.label :status, class: 'label1' %>
+    <%= f.collection_select(:status, Status.all, :name, :name) %>
+  </div>
+<br>
+
+  <div> 
+    <%= f.label :paymentstatus, "Payment Status", class: 'label1' %>
+    <%= f.collection_select(:paymentstatus, Pstat.all, :name, :name) %>
+  </div>
+<br>
+
+<div>
+    <%= f.submit "Update  project", class: "btn btn-success btn-sm" %>
+    <%= link_to 'Back', :back, class: "btn btn-default btn-sm linktext" %>
+</div>
+
+    <% end %>
+
+  </div>
+
+</div>
+
+

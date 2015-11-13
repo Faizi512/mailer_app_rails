@@ -215,6 +215,56 @@ margin-top: 130px;
 
 }
 
+.carouselpicture {
+
+margin-right: auto;
+margin-left: auto;
+
+}
+
+#carouselpictureframe {
+
+background-color: #393939;
+
+}
+
+.carouseltext {
+
+font-size: 48px;
+font-family: 'Exo 2';
+font-weight: 200;
+color: #fff;
+padding-bottom: 25px;
+color: #000000;
+
+}
+
+.carouseltext span {
+
+background-color: #ffffff;
+
+}
+
+.carousel-caption {
+
+padding-bottom: 100px;
+
+
+}
+
+#carouselcaption {
+
+margin-left: auto;
+margin-right: auto;
+
+}
+
+.mb {
+
+
+
+}
+
 .bord {
 
   border: 3px solid #eee; 
@@ -235,7 +285,6 @@ text-align: center;
 
 .adminonly {
 
-
 margin-top: 200px;
 padding-top: 200px;
 
@@ -252,7 +301,6 @@ padding-top: 200px;
   margin-left: 2px !important;
 
 }
-
 
 .consoleboxtitle {
 
@@ -365,6 +413,13 @@ height: 480px;
 top: 100px;
 
   }
+
+#carousel1 {
+
+margin-right: auto;
+margin-left: auto;
+
+}
 
 /* About Page CSS */
 
@@ -565,9 +620,22 @@ bottom: 20px;
 }
 
 
+@media (max-width: 1200px) {
 
+.carouseltext {
 
-/* Iphone Screen Size to 767 pixels */  
+font-size: 18px;
+font-family: 'Exo 2';
+font-weight: 200;
+color: #fff;
+padding-bottom: 15px;
+color: #000000;
+
+}
+
+}
+
+/* Iphone Screen Size to 850 pixels */  
 
 @media (max-width: 850px) {
 
@@ -602,6 +670,28 @@ text-align: left;
 
 }
 
+.carouseltext {
+
+font-size: 21px;
+font-family: 'Exo 2';
+font-weight: 200;
+color: #fff;
+padding-bottom: 15px;
+color: #000000;
+
+}
+
+.carousel-caption {
+
+padding-bottom: 30px;
+
+
+}
+
+
+
+
+
 }
 
 
@@ -613,6 +703,27 @@ text-align: left;
 /* Iphone portrait mode */
 
 @media (max-width : 480px) {
+
+
+  .carouseltext {
+
+font-size: 18px;
+font-family: 'Exo 2';
+font-weight: 200;
+color: #fff;
+padding-bottom: 15px;
+color: #000000;
+
+}
+
+.carousel-caption {
+
+padding-bottom: 30px;
+
+
+}
+
+
 
 
   }

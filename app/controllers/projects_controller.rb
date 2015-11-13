@@ -1,5 +1,5 @@
 class ProjectsController < ApplicationController
-	before_action :authenticate_admin!, only: [:new, :index, :create, :destroy, :details, :show]
+	before_action :authenticate_admin!, only: [:new, :index, :create, :destroy, :details, :show, :edit]
 
 	def index
 	@projects = Project.all
@@ -38,20 +38,32 @@ class ProjectsController < ApplicationController
 	end
 
 	def highlight
-
-
 	Project.where(id: params[:showreel]).update_all(is_featured: true)
- 		 redirect_to projects_path 
- 
-	
+ 		 redirect_to projects_path 	
 	end
 
 
+  def edit
+  	  @client = Client.find(params[:client_id])
+ 	  @project = Project.find(params[:id])
+  end
+
+
+
+
   def update
+  
 
 
+if params[:showreel].nil?
+	@client = Client.find(params[:client_id])
+  @project = Project.find(params[:id])
 
-if params[:showreel].any?
+	@project.update_attributes(project_params)
+      				flash[:success] = "Settings updated"
+      				redirect_to projects_path
+
+elsif params[:showreel].any?
 
 @allprojects = Project.all
 @allprojects.update_all(is_featured: false)
@@ -62,10 +74,11 @@ if params[:showreel].any?
   				@project = Project.find_by_id(x)
   				@project.update_attribute(:is_featured, true)
   				@project.save
+  				
   				end
-  					redirect_to projects_path
-  				end
+  				redirect_to projects_path
   			end
+  		end
 
 	private
 
