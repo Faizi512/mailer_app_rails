@@ -23,6 +23,8 @@ gem 'rails-erd'
 
 gem 'fancybox2-rails'
 
+gem 'jquery-turbolinks'
+
 
 group :development do
 	gem 'sqlite3'
