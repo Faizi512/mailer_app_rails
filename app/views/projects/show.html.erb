@@ -68,8 +68,11 @@
 <span class="glyphicon glyphicon-arrow-left"></span> Back to Client Profile page
 <% end %>
 
+<% if admin_signed_in? %>
+
 <%= link_to 'Delete', "#", method: :delete, data: { confirm: 'Deleting this project will also permanently delete all images associated with this project. Are you sure you wish to proceed?' }, class: "btn btn-danger btn-sm" %>
 
+<% end %>
 
 </div>
 

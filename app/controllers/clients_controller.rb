@@ -1,9 +1,9 @@
 class ClientsController < ApplicationController
 
 
-before_action :authenticate_admin!, only: [:index, :new, :create, :destroy]
+before_action :authenticate_admin!, only: [:index, :edit, :update, :new, :create, :destroy]
 before_action :check_client, only: [:show]
-before_action :logged_in_client, only: [:edit, :update]
+#before_action :logged_in_client, only: [:edit, :update]
 
 
   def index
