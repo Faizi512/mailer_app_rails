@@ -1,5 +1,5 @@
 class ProjectsController < ApplicationController
-	before_action :authenticate_admin!, only: [:new, :index, :create, :destroy, :details, :show, :edit]
+	before_action :authenticate_admin!, only: [:new, :index, :create, :destroy, :details, :edit]
 
 	def index
 	@projects = Project.all

@@ -15,7 +15,7 @@
       <p class="attn">Projects (<%= @client.projects.count %>)</p>
     <% @client.projects.each do |x| %>
   <ul>
-    <li><%= link_to x.client.name, x.client %> | <%= x.description %> | Project ID: <%= x.id %> |<%= link_to "project details", client_project_path(@client, x), class: "btn btn-link linktext" %> | <%= link_to "edit", edit_client_project_path(@client,x), class: "btn btn-link linktext" %><small> Created <%= time_ago_in_words(x.created_at) %> ago.</small></li> 
+    <li><%= link_to x.client.name, x.client %> | <%= x.description %> | Project ID: <%= x.id %> |<%= link_to "project details", client_project_path(@client, x), class: "btn btn-link linktext" %> |<%if admin_signed_in?%> <%= link_to "edit", edit_client_project_path(@client,x), class: "btn btn-link linktext" %><% end %><small> Created <%= time_ago_in_words(x.created_at) %> ago.</small></li> 
   </ul>
   <% end %>
 
@@ -25,7 +25,8 @@
 </div>
 
 <div>
-  <%= link_to "Create new project", new_client_project_path(@client), class: 'btn btn-default btn-sm linktext' %>
+  <% if admin_signed_in? %>
+  <%= link_to "Create new project", new_client_project_path(@client), class: 'btn btn-default btn-sm linktext' %> <% end %>
   <%= link_to 'Back', :back, class: "btn btn-default btn-sm linktext" %>
 </div>
 
