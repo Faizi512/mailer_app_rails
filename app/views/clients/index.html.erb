@@ -29,7 +29,7 @@
     <td><%= client.phonenumber %></td>
 
 <% if admin_signed_in? && !client_signed_in? %>
-  <td><%= link_to "edit", edit_client_path(client), class: "linkdanger" %></td>    
+  <td><%= link_to "edit", edit_client_path(client), class: "linktext" %></td>    
   <td><%= link_to "delete", client, method: :delete, data: { confirm: "Are you sure? This action cannot be undone." }, class: "linkdanger" %></td>
 <% end %>
     </tr>
