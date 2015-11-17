@@ -1,9 +1,33 @@
 
+<div class="container-fluid" id="container">
+
+    
 
 
-<div class="container-fluid" id="containeri">
+      <div class="container-fluid">
+        <p class="attn"> Work </p>
+      <div class="button-group filter-button-group">
+        <ul class="nav navbar-nav" id="submenu">
+        <li><button class=" btn btn-xs btn-link" data-filter="*">Show all</button></li>
+        <% @ctypes.each do |y| %>
+       <li> <button class=" btn btn-xs btn-link" data-filter=".<%=y.name%>"><%=y.name%></button></li>
+       <% end %>
+ 
+    </div>
+  </div> <!-- fluid -->
+
+</div> <!-- Z -->
+
+<div class="container-fluid" id="containerw">
+
+
+  <div class="container-fluid" id="workbox">
+
+
+  
   <% @projects.each do |x| %>
-  <div class="Witem row thumbnail <%= x.ctype %>">
+
+  <div class="Witem thumbnail <%= x.ctype %>">
 
     <% x.photos.limit(1).each do |y| %>
 
@@ -12,36 +36,39 @@
     <% end %>
 
 
+
      <h4 class="little" id="thumbnail-label"> <%= x.client.name %> </h4>
 
-   </br>
+      </br>
 
-    <div> Type: <%= x.ctype %> </div>
-    <div> Location: <%= x.location %> </div>
-  
+      <div> Type: <%= x.ctype %> </div>
+      <div> Location: <%= x.location %> </div>
+    
 
-  </br>
-</br>
+      </br>
+      </br>
 
 
     <%= link_to "View Set", project_photo_path(x, x.photos), class: "btn btn-default btn-sm viewset" %>
 
   </br>
-  <div class="whr">
-  </div>
+  <div class="whr"></div>
 
 
-  </div> <!-- Project Div -->
+ </div> <!-- Witem -->
 
    <% end %>
 
-</div> <!-- Container-Fluid -->
+</div> <!-- workbox -->
+
+</div> <!-- containerw -->
+
 
 
 
 <script>
 // initialize Isotope
-var $container = $('#containeri').isotope({
+var $container = $('#workbox').isotope({
   itemSelector: '.Witem',
    masonry: {
     columnWidth: 225
@@ -52,6 +79,10 @@ $container.imagesLoaded( function() {
   $container.isotope('layout');
 });
 
+$('.filter-button-group').on( 'click', 'button', function() {
+  var filterValue = $(this).attr('data-filter');
+  $container.isotope({ filter: filterValue });
+});
 
 
 </script>

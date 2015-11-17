@@ -13,6 +13,7 @@ class NavigationController < ApplicationController
   def work
 
     @projects = Project.all
+    @ctypes = Ctype.all
 
 
 
