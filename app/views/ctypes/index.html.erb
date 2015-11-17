@@ -1,7 +1,7 @@
 
 <div class="container" id="containerb">
 
-<h3> All Photography Categories </h3>
+<p class="attn"> All Photography Categories </p>
 
 <table class="table table-condensed">
 
@@ -16,9 +16,9 @@
     <% @ctypes.each do |ctype| %>
       <tr>
         <td><%= ctype.name %></td>
-        <td><%= link_to 'Show', ctype %></td>
-        <td><%= link_to 'Edit', edit_ctype_path(ctype) %></td>
-        <td><%= link_to 'Destroy', ctype, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Show', ctype, class: "linktext" %></td>
+        <td><%= link_to 'Edit', edit_ctype_path(ctype), class: "linktext" %></td>
+        <td><%= link_to 'Destroy', ctype, method: :delete, data: { confirm: 'Are you sure?' }, class: "linkdanger" %></td>
       </tr>
     <% end %>
   </tbody>
