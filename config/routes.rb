@@ -26,6 +26,8 @@ root 'navigation#home'
 
   get '/preview' => 'models#preview'    
 
+  get '/instagram' => 'navigation#instagram'
+
   devise_scope :admin do 
   get '/nt' => 'devise/sessions#create'
   end               
