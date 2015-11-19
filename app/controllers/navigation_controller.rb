@@ -46,5 +46,9 @@ class NavigationController < ApplicationController
     
   end
 
+  def instagram
+
+  end
+
 
 end
