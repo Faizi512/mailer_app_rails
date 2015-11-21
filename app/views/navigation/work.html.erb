@@ -13,7 +13,7 @@
  </div> <!-- Z -->
  <div class="container-fluid" id="containerw">
   <div class="container-fluid" id="workbox">
-    <% @projects.each do |x| %>
+    <% @projects.each_with_index do |x, index| %>
     <div class="Witem thumbnail <%= x.ctype %>">
       <% y = x.photos.first %>
       <%= image_tag(y.asset.url(:square)) %>
