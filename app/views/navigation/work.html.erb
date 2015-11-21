@@ -15,7 +15,7 @@
   <div class="container-fluid" id="workbox">
     <% @projects.each do |x| %>
     <div class="Witem thumbnail <%= x.ctype %>">
-      <% x.photos.limit(1).each do |y| %>
+      <% x.photos.first(1).each do |y| %>
       <%= image_tag(y.asset.url(:square)) %>
       <% end %>
       <h4 class="little" id="thumbnail-label"> <%= x.client.name %> </h4>
