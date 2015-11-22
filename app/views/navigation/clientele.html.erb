@@ -9,7 +9,7 @@
   <% @clients.each do |client| %>
 
  <div class="item row">
-  <%= image_tag client.logo.url(:thumb) %>
+  <%= image_tag(client.logo.url(:thumb), class: "logoshowcase") %>
  </div>
 
 <% end %>
