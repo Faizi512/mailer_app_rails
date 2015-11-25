@@ -10,7 +10,7 @@
 	<div class="col-md-6">
 	</br>
 		<p class="attn"> Projects by Category </p>
-	
+		<%= pie_chart Project.group(:ctype).count, colors: ["#52adc0", "#5276c0", "#52c09c", "#6552c0", "#9c52c0", "c052ad", "#c05276", "#c06552", "#c09c52"] %>
 	</div>
 
 	<div class="col-md-3">

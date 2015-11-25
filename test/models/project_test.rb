@@ -13,7 +13,7 @@
 #  client_id     :integer
 #  created_at    :datetime
 #  updated_at    :datetime
-#  is_featured   :boolean
+#  is_featured   :boolean          default(FALSE)
 #  photographer  :string(255)
 #
 
