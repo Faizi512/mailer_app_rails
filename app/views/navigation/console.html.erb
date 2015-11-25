@@ -6,6 +6,13 @@
 <div> Admin Console </div>
 
 <div class="row">
+
+	<div class="col-md-6">
+	</br>
+		<p class="attn"> Projects by Category </p>
+		<%= pie_chart Project.group(:ctype).count, colors: ["#52adc0", "#5276c0", "#52c09c", "#6552c0", "#9c52c0", "c052ad", "#c05276", "#c06552", "#c09c52"] %>
+	</div>
+
 	<div class="col-md-3">
 
 		<div class="square" id="cone"> 
@@ -33,11 +40,6 @@
 		</ul>
 		</div>
 
-	</div>
-
-
-	<div class="col-md-3">
-
 		<div class="square" id="cfour"> 
 		<div class="consoleboxtitle"> Category Management </div>
 		<ul class="consolebox">
@@ -45,6 +47,10 @@
 		<li><%=link_to "Add new category", new_ctype_path %></li>
 		</ul>
 		</div>
+
+	</div>
+
+	<div class="col-md-3">
 
 		<div class="square" id="cfive"> 
 		<div class="consoleboxtitle"> Location Management </div>
@@ -62,10 +68,6 @@
 		</ul>
 		</div>
 
-</div>
-
-<div class="col-md-3">
-
 		<div class="square" id="cseven"> 
 		<div class="consoleboxtitle"> Payment Status Management </div>
 		<ul class="consolebox">
@@ -80,6 +82,8 @@
 		<li><%=link_to "Manage Featured Projects", projects_path %> </li>
 		</ul>
 		</div>
+
+	</div>
 
 </div>
 

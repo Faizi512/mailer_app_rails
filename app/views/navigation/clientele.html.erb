@@ -3,8 +3,6 @@
 
 <div class="container" id="containerb">
 
-<p> Clientele </p>
-
 
   <% @clients.each do |client| %>
 
@@ -20,14 +18,14 @@
 
 <script>
 
-// initialize Isotope
+
 var $container = $('#containerb').isotope({
   itemSelector: '.item',
    masonry: {
     columnWidth: 50
   }
 });
-// layout Isotope again after all images have loaded
+
 $container.imagesLoaded( function() {
   $container.isotope('layout');
 });

@@ -25,6 +25,7 @@ gem 'fancybox2-rails'
 
 gem 'jquery-turbolinks'
 
+gem 'chartkick'
 
 group :development do
 	gem 'sqlite3'
