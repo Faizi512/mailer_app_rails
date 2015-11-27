@@ -4,3 +4,14 @@
 <h2> Hello </h2>
 
 </div>
+
+<div>
+
+  <% @instagram.each do |instagram| %>
+
+    <%= image_tag instagram.images.standard_resolution.url %>
+
+    <% end %>
+
+
+</div>

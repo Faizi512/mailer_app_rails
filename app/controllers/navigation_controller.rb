@@ -47,7 +47,7 @@ class NavigationController < ApplicationController
   end
 
   def instagram
-
+    @instagram = Instagram.user_recent_media("ybrohi", {:count => 6})
   end
 
 
