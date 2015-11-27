@@ -67,8 +67,8 @@
       <div class="col-xs-6 col-sm-3">
             <% b = a.photos[0] %>
     <% if b.present? %>
-         <%= link_to(image_tag(b.asset.url(:preview)), project_photo_path(a, a.photos),  class: "recent") %>
-         
+    <div title="<%= a.client.name %>">
+         <%= link_to(image_tag(b.asset.url(:preview)), project_photo_path(a, a.photos),  class: "recent") %> </div>
        </div>
         <% end %>
           <% end %>
