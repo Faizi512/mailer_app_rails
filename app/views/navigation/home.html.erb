@@ -60,17 +60,24 @@
 <div class="previewwork">
 <% @z.each do |a| %>
 
-  <% a.photos.first do |b| %>
+  <% b = a.photos[0] %>
+
+  <% if b.present? %>
+
+  <%= image_tag(b.asset.url(:preview), class: "recent") %>
+
+  <% end %>
+
 
 <div class="row">
     <div class="col-xs-6 col-sm-3">
-    <%= image_tag(b.asset.url(:featured), class: "recent") %>
+
   </div>
 </div>
 
 <% end %>
 
-<% end %>
+
 </div>
 
 </div>
