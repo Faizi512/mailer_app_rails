@@ -32,8 +32,6 @@
 
       </div>
 
-      
-
   <% end %>
 
   </div> <!-- Carousel-Inner  -->
@@ -58,19 +56,23 @@
       </div>
 
 <div class="previewwork">
-<% @z.each do |a| %>
 
-  <% b = a.photos[0] %>
 
-  <% if b.present? %>
+
 
 <div class="row">
-    <div class="col-xs-6 col-sm-3">
-  <%= image_tag(b.asset.url(:preview), class: "recent") %>
-  </div>
-</div>
 
-<% end %>
+  <% @z.each do |a| %>
+
+      <div class="col-xs-6 col-sm-3">
+            <% b = a.photos[0] %>
+    <% if b.present? %>
+         <%= image_tag(b.asset.url(:preview), class: "recent") %>
+       </div>
+        <% end %>
+     </div>
+
+
 
   <% end %>
 </div>
