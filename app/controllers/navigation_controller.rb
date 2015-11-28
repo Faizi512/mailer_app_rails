@@ -15,9 +15,9 @@ class NavigationController < ApplicationController
     @projects = Project.all
     @ctypes = Ctype.all
 
-
-
   end
+
+
 
   def about
   	respond_to do |format|
@@ -25,14 +25,20 @@ class NavigationController < ApplicationController
     end
   end
 
+
+
   def contact
   end
+
+
 
   def clientele
 
     @clients = Client.all
   
   end
+
+
 
   def console
 
@@ -46,9 +52,15 @@ class NavigationController < ApplicationController
     
   end
 
+
+
   def instagram
-    @instagram = Instagram.user_recent_media("ybrohi", {:count => 6})
+      client = Instagram.client(:access_token => session[:access_token])
+      user = client.user
+      @this = user.username
   end
+
+
 
 
 end
