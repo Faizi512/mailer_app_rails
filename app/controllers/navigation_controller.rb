@@ -55,9 +55,7 @@ class NavigationController < ApplicationController
 
 
   def instagram
-      client = Instagram.client(:access_token => session[:access_token])
-      user = client.user
-      @this = user.username
+      @this = Instagram.media_popular
   end
 
 

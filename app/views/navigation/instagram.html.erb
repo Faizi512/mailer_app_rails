@@ -1,12 +1,14 @@
 
 <div class="container" id="containerb">
 
-<h2> Hello </h2>
-
-</div>
-
-<div>
-
-<%= render @this %>
-
-</div>
+<h1>Instagram Lookup</h1>
+  <% @this.each do |popular| %>
+  <div class="col-sm-12 col-md-4">
+    <div class="thumbnail">
+      <%= image_tag popular.images.low_resolution.url %>
+      <div class="caption">
+        <%= popular.user.username %>
+      </div>
+    </div>
+  </div>
+<% end %>
