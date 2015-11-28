@@ -27,6 +27,8 @@ gem 'jquery-turbolinks'
 
 gem 'chartkick'
 
+gem 'instagram'
+
 group :development do
 	gem 'sqlite3'
 	gem 'annotate'
