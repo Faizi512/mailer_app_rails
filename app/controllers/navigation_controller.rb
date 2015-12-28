@@ -55,9 +55,13 @@ class NavigationController < ApplicationController
 
 
   def instagram
-      @this = Instagram.media_popular
+
+    @feed = HTTParty.get("https://api.instagram.com/v1/users/self/media/recent/?access_token=#{Instagram.access_token}")
+    @fi = @feed.parsed_response
+
   end
 
+private
 
 
 

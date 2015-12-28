@@ -29,6 +29,8 @@ gem 'chartkick'
 
 gem 'instagram'
 
+gem 'httparty'
+
 group :development do
 	gem 'sqlite3'
 	gem 'annotate'

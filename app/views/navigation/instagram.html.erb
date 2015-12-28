@@ -1,14 +1,40 @@
 
 <div class="container" id="containerb">
 
-<h1>Instagram Lookup</h1>
-  <% @this.each do |popular| %>
-  <div class="col-sm-12 col-md-4">
-    <div class="thumbnail">
-      <%= image_tag popular.images.low_resolution.url %>
-      <div class="caption">
-        <%= popular.user.username %>
-      </div>
-    </div>
-  </div>
+	
+
+<% @fi["data"].each do |object| %>
+
+<div class="instaimage">
+
+	<div class="imageblock"> <%= image_tag(object["images"]["standard_resolution"]["url"], size: "350x350") %> </div>
+
+	<div class="likeblock"><span class="glyphicon glyphicon-thumbs-up"></span>  <%= object["likes"]["count"] %> </div>
+
+</div>
+
+
+
 <% end %>
+</div>
+
+<script>
+
+var $container = $('#containerb').isotope({
+  itemSelector: '.instaimage',
+   masonry: {
+    columnWidth: 20
+  }
+});
+
+$container.imagesLoaded( function() {
+  $container.isotope('layout');
+});
+
+$('.filter-button-group').on( 'click', 'button', function() {
+  var filterValue = $(this).attr('data-filter');
+  $container.isotope({ filter: filterValue });
+});
+
+
+</script>
