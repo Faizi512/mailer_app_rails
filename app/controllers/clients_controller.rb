@@ -33,7 +33,6 @@ before_action :check_client, only: [:show]
 
   def edit
     @client = Client.find(params[:id])
-
   end
 
     def update
