@@ -26,6 +26,8 @@ gem 'fancybox2-rails'
 gem 'jquery-turbolinks'
 
 gem 'chartkick'
+gem 'groupdate'
+gem 'active_median'
 
 gem 'instagram'
 
