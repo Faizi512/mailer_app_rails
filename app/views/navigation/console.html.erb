@@ -10,7 +10,7 @@
 	<div class="col-md-6">
 	</br>
 		<p class="attn"> Projects by Category </p>
-		<%= pie_chart Project.group(:ctype).count %>
+		<%= pie_chart Project.group(:id).count %>
 	
 	</div>
 
