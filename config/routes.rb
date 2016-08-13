@@ -28,6 +28,8 @@ root 'navigation#home'
 
   get '/instagram' => 'navigation#instagram'
 
+  get '/portfolio' => 'projects#portfolio'
+
   devise_scope :admin do 
   get '/nt' => 'devise/sessions#create'
   end               
@@ -54,6 +56,7 @@ root 'navigation#home'
 
     end
 
+  
 
   devise_for :admins, skip: :registrations
   

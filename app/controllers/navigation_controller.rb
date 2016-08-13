@@ -12,7 +12,7 @@ class NavigationController < ApplicationController
 
   def work
 
-    @projects = Project.where(card: true)
+    @projects = Project.where(card: true).order('created_at DESC')
     @ctypes = Ctype.all
 
   end
