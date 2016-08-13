@@ -14,6 +14,8 @@
 //= require jquery
 //= require jquery.turbolinks
 //= require fancybox
+//= require jsapi
+//= require chartkick
 //= require jquery_ujs
 //= require turbolinks
 
