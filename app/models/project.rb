@@ -23,7 +23,7 @@ class Project < ActiveRecord::Base
   has_many :photos
 
 
-  default_scope -> { order(created_at: :desc) }
+
   validates :client_id, presence: true
 
  
