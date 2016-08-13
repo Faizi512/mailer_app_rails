@@ -83,7 +83,7 @@ elsif params[:showreel].any?
 	private
 
 	def project_params
-		params.require(:project).permit(:date, :headline, :location, :description, :photographer, :ctype, :status, :paymentstatus, :is_featured)
+		params.require(:project).permit(:date, :headline, :location, :description, :photographer, :ctype, :status, :paymentstatus, :is_featured, :card)
 	end
 
 
