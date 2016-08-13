@@ -51,6 +51,11 @@
     <%= f.collection_select(:paymentstatus, Pstat.all, :name, :name) %>
   </div>
 <br>
+ <div><%= f.label :card, "Create card for portfolio?", class: 'label1' %>
+       <%= f.check_box :card %>
+     </div>
+  <br>
+
 
 <div>
     <%= f.submit "Update project", class: "btn btn-success btn-sm" %>

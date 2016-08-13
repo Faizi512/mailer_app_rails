@@ -12,7 +12,7 @@ class NavigationController < ApplicationController
 
   def work
 
-    @projects = Project.all
+    @projects = Project.where(card: true)
     @ctypes = Ctype.all
 
   end
