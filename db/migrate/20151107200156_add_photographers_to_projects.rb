@@ -1,4 +1,4 @@
-class AddPhotographersToProjects < ActiveRecord::Migration
+class AddPhotographersToProjects < ActiveRecord::Migration[6.0]
   def self.up
   	add_column :projects, :photographer, :string
   end

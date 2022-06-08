@@ -3,14 +3,14 @@ source 'https://rubygems.org'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 
-ruby '2.1.4'
+ruby '2.7.1'
 
-gem 'rails', '4.1.2'
+gem 'rails', '6.0.1'
 gem 'bootstrap-sass', '3.3.4.1'
-gem 'sprockets', '2.11.0'
+gem 'sprockets', '~> 4.0', '>= 4.0.3'
 
 gem 'devise'
-
+gem 'listen', '~> 3.7', '>= 3.7.1'
 gem 'aws-sdk', '< 2.0'
 gem 'paperclip'
 
@@ -42,11 +42,11 @@ end
 
 
 # Use SCSS for stylesheets
-gem 'sass-rails', '~> 4.0.3'
+gem 'sass-rails', '~> 6.0'
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
 # Use CoffeeScript for .js.coffee assets and views
-gem 'coffee-rails', '~> 4.0.0'
+gem 'coffee-rails', '~> 5.0'
 # See https://github.com/sstephenson/execjs#readme for more supported runtimes
 # gem 'therubyracer',  platforms: :ruby
 
@@ -62,7 +62,7 @@ gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0',          group: :doc
 
 # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
-gem 'spring',        group: :development
+gem 'spring', '~> 4.0',        group: :development
 
 # Use ActiveModel has_secure_password
 gem 'bcrypt', '~> 3.1.7'
@@ -79,7 +79,7 @@ gem 'bcrypt', '~> 3.1.7'
 group :production do
 	gem 'pg'
 	gem 'rails_12factor', '0.0.2'
-	gem 'puma',           '2.11.1'
+	gem 'puma', '~> 5.6', '>= 5.6.4'
 end
 
 

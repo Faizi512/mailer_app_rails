@@ -1,4 +1,4 @@
-class AddPhotographerToProjects < ActiveRecord::Migration
+class AddPhotographerToProjects < ActiveRecord::Migration[6.0]
   def change
     add_reference :photographers, :project, index: true
   end

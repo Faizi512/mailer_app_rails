@@ -1,4 +1,4 @@
-class AddFeaturedToProjects < ActiveRecord::Migration
+class AddFeaturedToProjects < ActiveRecord::Migration[6.0]
   def self.up
   	add_column :projects, :is_featured, :boolean
   end

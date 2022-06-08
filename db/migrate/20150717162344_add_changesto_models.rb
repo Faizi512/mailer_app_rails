@@ -1,4 +1,4 @@
-class AddChangestoModels < ActiveRecord::Migration
+class AddChangestoModels < ActiveRecord::Migration[6.0]
   def change
 
   	change_column :models, :bust, :float

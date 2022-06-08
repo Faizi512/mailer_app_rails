@@ -1,4 +1,4 @@
-class ChangeTypeToCtype < ActiveRecord::Migration
+class ChangeTypeToCtype < ActiveRecord::Migration[6.0]
 	  def change
 
 	  change_table :projects do |t|

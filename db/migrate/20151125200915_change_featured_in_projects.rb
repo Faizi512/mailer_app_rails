@@ -1,4 +1,4 @@
-class ChangeFeaturedInProjects < ActiveRecord::Migration
+class ChangeFeaturedInProjects < ActiveRecord::Migration[6.0]
 
   def self.up
   	change_column :projects, :is_featured, :boolean, default: false

@@ -1,4 +1,4 @@
-class AddCardToProjects < ActiveRecord::Migration
+class AddCardToProjects < ActiveRecord::Migration[6.0]
   def self.up
     add_column :projects, :card, :boolean, default: false
   end

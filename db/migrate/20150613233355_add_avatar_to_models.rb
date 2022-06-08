@@ -1,4 +1,4 @@
-class AddAvatarToModels < ActiveRecord::Migration
+class AddAvatarToModels < ActiveRecord::Migration[6.0]
     def self.up
     add_attachment :models, :avatar
   end

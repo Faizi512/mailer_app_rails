@@ -1,4 +1,4 @@
-class Changephnumtypes < ActiveRecord::Migration
+class Changephnumtypes < ActiveRecord::Migration[6.0]
   def change
 
   	change_column :clients, :phonenumber, :string

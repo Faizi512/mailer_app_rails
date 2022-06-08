@@ -1,4 +1,4 @@
-class CreateCtypes < ActiveRecord::Migration
+class CreateCtypes < ActiveRecord::Migration[6.0]
   def change
     create_table :ctypes do |t|
       t.string :name
